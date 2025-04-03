@@ -1,0 +1,104 @@
+body {
+    background: #899aab;
+}
+
+div#container {
+    background-image: url(homeIMGS/bedroomDay.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/******** Font Styling ********/
+h1 {
+    font-family: "Merriweather Sans", sans-serif;
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 55px;
+}
+
+h2 {
+    font-family: "Merriweather Sans", sans-serif;
+    color: #3E4A77;
+    background-color: #FFFFFF;
+    font-size: 16px;
+    margin: 0 14%;
+}
+
+a, a:visited {
+    font-family: "Merriweather Sans", sans-serif;
+    font-size: 14px;
+    text-decoration: none;
+    color: #000000;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+
+}
+
+a:hover {
+    background-color: #52708d;
+    color:#FFFFFF;
+    list-style: none;
+}
+
+a:hover::before {
+    content: ' \2022 ';
+}
+
+h3 {
+    font-family: "Jomhuria", serif;
+    font-size: 36px;
+    color: #3E4A77;
+    margin: 0;
+}
+
+button {
+    font-family: "Jomhuria", serif;
+    position: fixed;
+    font-size: 90px;
+    rotate: 270deg;
+    top: 50vh;
+}
+
+/******** Header ********/
+header {
+    text-align: center;
+    padding: 20px 0;
+}
+
+/******** Sections ********/
+main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+section {
+    background-color: #d9d9d9bd;
+    width: 55vw;
+    padding: 22px;
+    border-radius: 30px;
+}
+
+nav ul, nav ol {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+    padding: 10px 0;
+}
+
+section#projects {
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+}
+
+@media only screen and (min-width: 600px) {
+    
+    /* change this later to be responsive <3 */
+    body {
+      background-color: lightblue;
+    }
+  }
