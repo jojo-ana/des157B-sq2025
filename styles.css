@@ -106,13 +106,6 @@ section#projects {
     flex-direction: column;
 }
 
-@keyframes colorAnimation {
-    0% { background-color: #52708d; }
-    50% { background-color: #899aac; }
-    100% { background-color: #52708d; } 
-}
-
-
 /******** Alternative Styling ********/
 body.night {
     background-color: #3e4a77;
@@ -167,7 +160,6 @@ button:hover.night {
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
-        animation: colorAnimation 6s infinite linear;
 
     }
 
