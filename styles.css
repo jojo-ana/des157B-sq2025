@@ -30,7 +30,7 @@ a, a:visited {
     text-decoration: none;
     color: #000000;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
-
+    padding: 4px 1px;
 }
 
 a:hover {
@@ -51,17 +51,27 @@ h3 {
 }
 
 button {
+    left: -10px;
     font-family: "Jomhuria", serif;
     position: fixed;
-    font-size: 90px;
+    font-size: 50px;
     rotate: 270deg;
     top: 50vh;
+    border: none;
+    border-radius: 16px;
+    width: 107px;
+    box-shadow: -3px -6px 0px #372A3A;
+}
+
+button:hover {
+    background-color: #372A3A;
+    color: antiquewhite;
 }
 
 /******** Header ********/
 header {
     text-align: center;
-    padding: 20px 0;
+    padding: 5% 0;
 }
 
 /******** Sections ********/
@@ -71,6 +81,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    padding-bottom: 10px;
 }
 
 section {
@@ -95,10 +106,99 @@ section#projects {
     flex-direction: column;
 }
 
-@media only screen and (min-width: 600px) {
+@keyframes colorAnimation {
+    0% { background-color: #52708d; }
+    50% { background-color: #899aac; }
+    100% { background-color: #52708d; } 
+}
+
+
+/******** Alternative Styling ********/
+body.night {
+    background-color: #3e4a77;
+}
+h1.night {
+    color: #CC7A82;
+}
+
+h2.night {
+    background-color: #CC7A82;
+    color: #372A3A;
+}
+
+section.night {
+    background-color: #372a3abd;
+
+}
+
+h3.night {
+    color: #CC7A82;
+}
+
+nav ul li a.night, nav ol li a.night {
+    color: #CFCECF;
+}
+
+a:hover.night {
+    background-color: #CC7A82;
+}
+
+div#container.night {
+    background-image: url(homeIMGS/bedroomNight.png);
+}
+
+button.night {
+    background-color: #372A3A;
+    color: #CFCECF;
+    box-shadow: -3px -6px 0px #899aac;
+}
+
+button:hover.night {
+    background-color: #CC7A82;
+    color: #372A3A;
+}
+
+@media only screen and (min-width: 900px) {
     
     /* change this later to be responsive <3 */
     body {
-      background-color: lightblue;
+        background-color: lightblue;
+        background-image: url(homeIMGS/bedroomDay.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        animation: colorAnimation 6s infinite linear;
+
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        align-items: start;
+        margin: 10px 95px;
+    }
+
+    div#container {
+        background: none;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+
+    }
+
+    section {
+        width: auto;
+    }
+
+    /******** Alternative Styling ********/
+    body.night {
+        background-image: url(homeIMGS/bedroomNight.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    div#container.night {
+        background: none;
     }
   }
