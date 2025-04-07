@@ -106,6 +106,17 @@ section#projects {
     flex-direction: column;
 }
 
+div#monster {
+    /* display: none; */
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: opacity 0.5s ease;
+}
+
+div#monster:hover {
+    opacity: 0;
+}
+
 /******** Alternative Styling ********/
 body.night {
     background-color: #3e4a77;
@@ -151,6 +162,15 @@ button:hover.night {
     color: #372A3A;
 }
 
+/* div#monster.night {
+    display: block;
+    position: absolute;
+    right: 5%;
+    bottom: 44%;
+} */
+
+
+
 @media only screen and (min-width: 900px) {
     
     /* change this later to be responsive <3 */
@@ -192,5 +212,16 @@ button:hover.night {
 
     div#container.night {
         background: none;
+    }
+
+    div#monster.night {
+        display: block;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        background-image: url('homeIMGS/monster.gif');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
     }
   }

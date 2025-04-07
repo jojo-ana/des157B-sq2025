@@ -9,6 +9,7 @@
     const links = document.querySelectorAll('a');
     const divContainer = document.querySelector('div#container');
     const body = document.querySelector('body');
+    const monster = document.querySelector('#monster');
     let mode = 'light';
 
     bttn.addEventListener('click', function(){
@@ -19,6 +20,7 @@
             body.className = 'night';
             bttn.className = 'night';
             bttn.innerHTML = 'on';
+            monster.className = 'night';
             for (const section of sections) {
                 section.className = 'night';
             }
@@ -37,6 +39,7 @@
             body.removeAttribute('class');
             bttn.removeAttribute('class');
             bttn.innerHTML = 'off';
+            monster.removeAttribute('class');
             for (const section of sections) {
                 section.removeAttribute('class');
             }
