@@ -162,15 +162,6 @@ button:hover.night {
     color: #372A3A;
 }
 
-/* div#monster.night {
-    display: block;
-    position: absolute;
-    right: 5%;
-    bottom: 44%;
-} */
-
-
-
 @media only screen and (min-width: 900px) {
     
     /* change this later to be responsive <3 */
