@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
 
     <!-- Link to fonts-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Winky+Rough:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
 
     <!-- My Styles -->
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <video id="myVideo" nocontrols muted loop autoplay playsinline>
+    <video id="myVideo" muted loop autoplay playsinline>
         <source src="media/DES157B-BlockbusterV2.webm" type="video/webm">
         <source src="media/DES157B-BlockbusterV2.mp4" type="video/mp4">
 
@@ -51,27 +51,27 @@
     <svg>
         <filter id="turbulence-1">
           <feTurbulence type="fractalNoise" baseFrequency="0.001" numOctaves="2" data-filterId="3" />
-          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="25" />
+          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="25" in2="turbulence"/>
         </filter>
       
         <filter id="turbulence-2">
           <feTurbulence type="fractalNoise" baseFrequency="0.002" numOctaves="2" data-filterId="3" />
-          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="25" />
+          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="25" in2="turbulence"/>
         </filter>
       
         <filter id="turbulence-3">
           <feTurbulence type="fractalNoise" baseFrequency="0.003" numOctaves="2" data-filterId="3" />
-          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="25" />
+          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="25" in2="turbulence"/>
         </filter>
       
         <filter id="turbulence-4">
           <feTurbulence type="fractalNoise" baseFrequency="0.004" numOctaves="2" data-filterId="3" />
-          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="25" />
+          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="25" in2="turbulence"/>
         </filter>
       
         <filter id="turbulence-5">
           <feTurbulence type="fractalNoise" baseFrequency="0.005" numOctaves="2" data-filterId="3" />
-          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="25" />
+          <feDisplacementMap xChannelSelector="R" yChannelSelector="G" in="SourceGraphic" scale="25" in2="turbulence"/>
         </filter>
       
       </svg>
