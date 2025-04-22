@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Normalize CSS for browser compatability -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- My Styles -->
+    <link href="styles.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Montserrat&display=swap&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Meta tag for mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- My Script -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    
+</body>
+    <div class="animated-lines">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+    </div>
+
+    <header> 
+        <h1>Saturday Screentime</h1>
+        <p>joanah's 4/19</p>
+    </header>
+    
+
+    <form action="#" method="post">
+        <label for="timeRange">time: </label>
+        <select id="timeRange" name="timeRange">
+            <option value="12:00 AM - 1:13 AM">12:00 AM - 1:13 AM</option>
+            <option value="6:41 AM - 6:42 AM">6:41 AM - 6:42 AM</option>
+            <option value="8:52 AM - 9:30 AM">8:52 AM - 9:30 AM</option>
+            <option value="11:45 AM - 3:10 PM">11:45 AM - 3:10 PM</option>
+            <option value="4:02 PM - 4:29 PM">4:02 PM - 4:29 PM</option>
+            <option value="4:40 PM - 5:34 PM">4:40 PM - 5:34 PM</option>
+            <option value="6:48 PM - 7:05 PM">6:48 PM - 7:05 PM</option>
+            <option value="8:52 PM - 11:59 PM">8:52 PM - 11:59 PM</option>
+        </select>
+    </form>
+    
+    <section class="displaySection">
+        <img src="images/phoneMe.png" alt="">
+        <p><span id="startTime"></span> - <span id="endTime"></span></p>
+    </section>
+
+</html>
