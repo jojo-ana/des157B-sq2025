@@ -35,6 +35,11 @@ p {
     font-size: 24px;
 }
 
+p#activity {
+    font-family: "Montserrat", sans-serif;
+
+}
+
 form {
     font-family: "Montserrat", sans-serif;
     color: var(--dark-brown);
