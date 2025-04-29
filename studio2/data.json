@@ -1,54 +1,50 @@
 {
-  "day": "Sunday",
-  "activities": [
-    {
+  "time1": {
       "start": "12:00AM",
       "end": "1:13AM",
       "device": "Phone",
       "activity": "phone brainrot: constantly switching between TikTok and Reels"
-    },
-    {
+  },
+  "time2": {
       "start": "6:41AM",
       "end": "6:42AM",
       "device": "Phone",
       "activity": "checked phone for time (too early to wake up)"
-    },
-    {
+  },
+  "time3": {
       "start": "8:52AM",
       "end": "9:30AM",
       "device": "Phone",
       "activity": "woke up and checked messages, emails, and notifications"
-    },
-    {
+  },
+  "time4": {
       "start": "11:45AM",
       "end": "3:10PM",
       "device": "PC",
       "activity": "Did work on my PC, coding for my 'Intro to digital games' class (learning C#!)"
-    },
-    {
+  },
+  "time5": {
       "start": "4:02PM",
       "end": "4:29PM",
       "device": "PC",
       "activity": "Took a break after lunch (lets go Marvel Rivals!)"
-    },
-    {
+  },
+  "time6": {
       "start": "4:40PM",
       "end": "5:34PM",
       "device": "Phone",
       "activity": "Brainrotted on my phone, lowkey procrastinating my nap"
-    },
-    {
+  },
+  "time7": {
       "start": "6:48PM",
       "end": "7:05PM",
       "device": "Phone",
       "activity": "Watched TikToks and replied to messages before getting out of bed post nap"
-    },
-    {
+  },
+  "time8": {
       "start": "8:52PM",
       "end": "11:59PM",
       "device": "PC",
       "activity": "Did my school work until the new day"
-    }
-  ]
+  }
 }
- 

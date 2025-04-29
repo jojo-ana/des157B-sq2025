@@ -30,6 +30,14 @@ header p {
     padding-left: 28vw;
 }
 
+h2 {
+    font-family: "Bagel Fat One", system-ui;
+    font-size: 20px;
+    color: #FEF3EA;
+    padding-left: 10px;
+    margin: 10px;
+}
+
 p {
     font-family: "Montserrat", sans-serif;
     font-size: 24px;
@@ -37,7 +45,30 @@ p {
 
 p#activity {
     font-family: "Montserrat", sans-serif;
+    color: #FEF3EA;
+    font-size: 18px;
+    padding-left: 10px;
+    margin: 10px;
+}
 
+#activitySection {
+    width: 250px;
+    height: 150px;
+    background-color: #1a1a1a;
+    border-radius: 20px;
+    transform: rotate(-3deg);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute; 
+    top: -90px;
+    left: -217px;
+}
+
+.hoverOff {
+    visibility: hidden;
+}
+
+.hoverOn {
+    visibility: visible;
 }
 
 form {
