@@ -54,6 +54,7 @@
         }
     }
 
+    /// Code for the IMG Hover Logic
     document.querySelector('.displaySection img').addEventListener('mouseover', function() {
         const img = this;
         img.src = img.dataset.hoverSrc || img.src;
