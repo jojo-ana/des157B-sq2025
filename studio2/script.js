@@ -32,6 +32,8 @@ document.querySelector('#timeRange').addEventListener('change', function(event) 
         displayImg.src = 'images/placeholder.png';
         displayImg.alt = 'No image';
         displayImg.dataset.hoverSrc = "images/placeholder.png";
+        document.getElementById('startTime').textContent = '';
+        document.getElementById('endTime').textContent = '';
          
     }
 });
