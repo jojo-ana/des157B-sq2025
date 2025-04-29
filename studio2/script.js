@@ -60,7 +60,6 @@
     });
 
     document.querySelector('.displaySection img').addEventListener('mouseout', function() {
-        const img = this;
         const selectedTime = document.getElementById('timeRange').value;
         const timeData = globalData[selectedTime];
         if (timeData) {
