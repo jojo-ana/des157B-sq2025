@@ -1,0 +1,31 @@
+/************ TYPOGRAPHY  ************/
+body {
+    background-image: url(images/paperBackground.png);
+}
+
+h1 {
+    font-family: "Ultra", serif;
+    color: #C48C3F;
+    font-size: 75px;
+    margin: 0%;
+}
+
+p, a, a:visited {
+    font-family: "Outfit", sans-serif;
+    color: #F1D476;
+    font-size: 20px;
+}
+
+/************* SECTION STYLING *************/
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+}
