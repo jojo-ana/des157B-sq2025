@@ -1,6 +1,7 @@
 /************ TYPOGRAPHY  ************/
 body {
     background-image: url(images/paperBackground.png);
+    background-size: cover;
 }
 
 h1 {
@@ -18,14 +19,38 @@ p, a, a:visited {
 
 /************* SECTION STYLING *************/
 
+body::before {
+    content: '';
+    display: block;
+    height: 45vh;
+} 
+
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: sticky;
+    top: 0;
+    padding-top: 15px;
+    text-align: center;
 }
 
 footer {
     display: flex;
     justify-content: center;
     gap: 10%;
+}
+
+/************* CUSTOM DIVS *************/
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+div#barBack img{
+    width: 100%;
 }

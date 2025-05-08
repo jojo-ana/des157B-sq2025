@@ -15,6 +15,11 @@
     <!-- My Styles -->
     <link href="styles.css" rel="stylesheet">
 
+
+
+    <!-- link to particles js -->
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
+
     <!-- add the link to the Animate on Scroll js here -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
@@ -28,6 +33,7 @@
         <p>joanah des 157b sq25</p>
     </header>
 
+    
     <div id="glassLeft">
         <img src="images/martiniDrink.PNG" alt="drawn martini glass cup" width="450">
     </div>
@@ -36,14 +42,23 @@
         <img src="images/tallGlassDrink.PNG" alt="drawn whiskey in a tall glass cup" width="450">
     </div>
 
-    <div id="barBack">
+    <div id="barBack" data-aos="zoom-in-up" data-aos-duration="3000">
         <img src="images/barBack.png" alt="bar in the background">
     </div>
+
+   <div id="particles-js"></div>
+   
+   
+ 
 
     <footer>
         <a href="https://vincentgarreau.com/particles.js/">particles.js</a>
         <a href="https://michalsnik.github.io/aos/">animate on scroll</a>
     </footer>
 
+
+    <script>
+        AOS.init();
+      </script>
 </body>
 </html>
