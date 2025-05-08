@@ -1,6 +1,7 @@
 /// Particles JS Code
 
-particlesJS("particles-js", {
+document.addEventListener("DOMContentLoaded", function() {
+  particlesJS("particles-js", {
     "particles": {
       "number": {
         "value": 67,
@@ -51,7 +52,10 @@ particlesJS("particles-js", {
         "speed": 3.20,
       }
     }
+  });
 });
+
+
 
 //Scroll listener
 window.addEventListener('scroll', () => {
