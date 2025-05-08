@@ -2,6 +2,8 @@
 body {
     background-image: url(images/paperBackground.png);
     background-size: cover;
+    height: 150vh;
+    overflow-x: hidden;
 }
 
 h1 {
@@ -39,6 +41,7 @@ footer {
     display: flex;
     justify-content: center;
     gap: 10%;
+    color: #372526;
 }
 
 /************* CUSTOM DIVS *************/
@@ -51,6 +54,33 @@ footer {
     z-index: -1;
 }
 
+
 div#barBack img{
     width: 100%;
+}
+
+#glassLeft, #glassRight {
+    position: absolute;
+    bottom: -30px;
+}
+  
+#glassLeft {
+    left: 0px;
+}
+  
+#glassRight {
+    right: -50px;
+}
+  
+#glassLeft img, #glassRight img {
+    transition: transform 1s ease;
+    width: 575px;
+}
+
+#glassLeft img {
+    transform: rotate(30deg);
+}
+  
+#glassRight img {
+    transform: rotate(-30deg);
 }

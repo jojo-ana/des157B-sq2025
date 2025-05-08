@@ -52,4 +52,19 @@ particlesJS("particles-js", {
       }
     }
 });
-  
+
+//Scroll listener
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+
+  const yOffset = scrollY * 1.25;
+  const yOffset2 = scrollY * 0.25;
+
+  const glassLeft = document.querySelector('#glassLeft ');
+  const glassRight = document.querySelector('#glassRight ');
+  const barBack = document.querySelector('#barBack');
+
+  glassLeft.style.transform = `translateY(-${yOffset}px)`;
+  glassRight.style.transform = `translateY(-${yOffset}px)`;
+  barBack.style.transform = `translateY(-${yOffset2}px)`;
+});
