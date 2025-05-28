@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Dream</title>
+
+    <!-- Normalize CSS for browser compatability -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- link to gsap js -->
+    <script src="js/gsap.min.js" defer></script>
+    <script src="js/SplitText.min.js" defer></script>
+    <script src="js/DrawSVGPlugin.min.js"></script>
+
+    <!-- link to jquerry js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
+    <!-- link to custom js -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="opening" class="showing">
+        <div class="content">
+            <header>
+                <h1 class="title">American Dream</h1>
+
+                <svg id="headerSVG" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path id="headerPath" d="M 100,100 m -52.5,0 a 52.5,52.5 0 1,1 105,0 a 52.5,52.5 0 1,1 -105,0" fill="transparent"/>
+                    <text>
+                        <textPath href="#headerPath" startOffset="17%">
+                        The
+                        </textPath>
+                    </text>
+                </svg>
+            </header>
+
+            <div class="portal">
+                <img class="back" src="images/PortalBack.png" alt=" the portal itself">
+                <img src="images/PortalFront.png" alt="rocks in front of a portal">
+            </div>
+
+            <p class="enterText">click to enter</p>
+        </div>
+        
+        <div id="visualContainer">
+            <svg width="249" height="29" viewBox="0 0 249 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="visuals" d="M2 2L22.4167 27L42.8333 2L63.25 27L83.6667 2L104.083 27L124.5 2L144.917 27L165.333 2L185.75 27L206.167 2L226.583 27L247 2"/>
+            </svg>
+
+            <svg width="249" height="29" viewBox="0 0 249 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="visuals" d="M2 2L22.4167 27L42.8333 2L63.25 27L83.6667 2L104.083 27L124.5 2L144.917 27L165.333 2L185.75 27L206.167 2L226.583 27L247 2"/>
+            </svg>
+
+            <svg width="264" height="279" viewBox="0 0 264 279" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="visuals" d="M261 3 L3 276">
+            </svg>
+
+            <svg width="264" height="279" viewBox="0 0 264 279" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="visuals" d="M3 276L261 3.00001">
+            </svg>
+
+
+        </div>
+        
+    </div>
+
+    <div id="scene1" class="hidden">
+        <div class="scenes">
+            <header>
+                <h1 class="title2">GREAT DEPRESSION</h1>
+                <div class="yearDisp"><p>1930s</p></div>
+            </header>
+
+            <div style="height: 50vh;"></div>
+            <section>
+                <p>The whispers of the American Dream began in the 1930s, where individuals seeked personal fulfillment and self-expression; the rhetoric of the <b>American Identity</b></p>
+            </section>
+            
+
+            <p>imagine there's functioning code for a puzzle game</p>
+            <section class="puzzleContainer" id="puzzleOld">
+                <div class="boxes">
+                    <div class="pieceContainer"></div>
+                    <div class="boardContainer"></div>
+                </div>
+                <div class="puzzleButtons">
+                    <button id="resetPuzzle1">Reset</button>
+                    <button id="finishPuzzle1">Done</button>
+                </div>
+            </section>
+
+            <section></section>
+            <div style="height: 40vh"></div>
+            
+            <div class="portal">
+                <img class="back" src="images/PortalBack.png" alt=" the portal itself">
+                <img src="images/PortalFront.png" alt="rocks in front of a portal">
+                <p>this will also only appear at the end after puzzle is completed</p>
+            </div>
+
+            <div style="height: 40vh"></div>
+        </div>
+        
+    </div>
+
+    <div id="scene2" class="hidden">
+        <div class="content">
+            <header>
+                <h1 class="title3">THIS IS AMERICA</h1>
+                <div class="yearDisp"><p>202X</p></div>
+            </header>
+
+            <div class="portal">
+                <img class="back" src="images/PortalBack.png" alt=" the portal itself">
+                <img src="images/PortalFront.png" alt="rocks in front of a portal">
+            </div>
+        </div>
+        
+    </div>
+
+    <div id="scene3" class="hidden">
+        <div class="content">
+            <header>
+                <h1 class="title4">???</h1>
+                <div class="yearDisp"><p id="randNum">XXXX</p></div>
+            </header>
+
+        </div>
+        
+    </div>
+</body>
+</html>

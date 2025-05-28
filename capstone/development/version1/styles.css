@@ -1,0 +1,218 @@
+body {
+    background: #201F1F;
+    /* background: radial-gradient(circle,rgba(32, 31, 31, 1) 0%, rgba(8, 9, 16, 1) 100%); */
+}
+
+/***** GENERAL CONTENT *****/
+
+.content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    flex-direction: column;
+}
+
+.showing {
+    visibility: visible;
+    opacity: 1;
+    display: block;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+    opacity: 0;
+}
+
+/***** TYPOGRAPHY STYLING *****/
+h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 4.5em;
+    color:rgb(255, 255, 255);
+}
+
+h1.title2, h1.title3, h1.title4 {
+    font-size: 8em;
+}
+
+text {
+    font-family: "Roboto", sans-serif;
+}
+
+p {
+    font-family: "Space Mono", monospace;
+    color:rgb(255, 255, 255);
+}
+
+/***** PORTAL CONTENT *****/
+.portal {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    cursor: pointer
+}
+
+.portal img {
+    position: absolute;
+    width: 450px;
+    height: auto;
+    bottom: 0%;
+}
+
+.portal .back {
+    animation: rotatePortal 4s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotatePortal {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.portal .front {
+    z-index: 1;
+}
+
+/***** OPENING SCREEN *****/
+.content header {
+    position: relative;
+}
+
+h1.title {
+    z-index: 1;
+    margin: .67em 0 0 0;
+}
+
+#headerSVG {
+    position: absolute;
+    /* z-index: 10; */
+    top: 0;
+    left: -79px;
+}
+
+#headerSVG text {
+    fill: rgb(255, 255, 255);
+    letter-spacing: -2px;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+#visualContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#visualContainer svg {
+    position: absolute;
+}
+
+#visualContainer svg:nth-child(1) {
+    top: 6%;
+    left: -1%;
+}
+
+#visualContainer svg:nth-child(2) {
+    top: 14%;
+    left: 8%;
+}
+
+#visualContainer svg:nth-child(3) {
+    bottom: 5%;
+    left: 80%;
+}
+
+#visualContainer svg:nth-child(4) {
+    bottom: -12%;
+    left: 77%;
+}
+
+.visuals {
+    stroke: rgb(255, 255, 255);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.enterText {
+  position: absolute;
+  display: inline-block;
+  bottom: 0px;
+    color: #6E6E6E;
+}
+
+.enterText::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 8px solid #6E6E6E;
+}
+
+/***** SCENES: General Styling *****/
+.scenes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.scenes header {
+    position: relative;
+}
+
+.scenes::before {
+    content: '';
+    display: block;
+    height: 30vh;
+}
+
+.scenes div.portal {
+    height: 50%;
+    /* position: fixed; */
+}
+
+.yearDisp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.yearDisp p {
+    background-color: #000000b0;
+    font-size: 2em;
+    padding: 4px 49px;
+    color: white;
+    letter-spacing: 14px;
+}
+
+.puzzleContainer {
+    width: 1000px;
+    margin: 5px auto;
+    padding: 5px;
+    position: relative;
+    align-items: center;
+    background: #6E6E6E;
+}
+
+.puzzleContainer .boxes {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
