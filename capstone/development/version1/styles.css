@@ -202,7 +202,7 @@ h1.title {
     letter-spacing: 14px;
 }
 
-.puzzleContainer {
+/* .puzzleContainer {
     width: 1000px;
     margin: 5px auto;
     padding: 5px;
@@ -215,4 +215,91 @@ h1.title {
     display: flex;
     gap: 30px;
     justify-content: space-between;
+} */
+
+
+/* TEST FOR SHI CAUSE I CANT THINK*/
+    .puzzleContainer {
+        width: 95vw;
+        margin: 5px auto;
+        padding: 5px;
+        position: relative;
+        align-items: center;
+        background-color: #AFAFB8;
+        border: 0.2px solid #D9D9D9;
+    }
+
+    .puzzleLayout {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .pieceContainer {
+        width: 300px;
+        height: 460px;
+        position: relative;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+    }
+
+    .boardContainer {
+        width: 90vw;
+        max-width: 460px;
+        aspect-ratio: 1 / 1;
+        display: grid;
+        
+        gap: 5px;
+        padding: 5px;
+        background-color: #AFAFB8;
+        box-sizing: border-box;
+    }
+
+    .piece, .droppableSpace {
+        width: 112.5px;
+        height: 112.5px;
+        border: 0.2px solid #D9D9D9;
+        font-size: 30px;
+        font-weight: bold;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        background-color: white;
+        cursor: move;
+    }
+
+    .droppableSpace {
+        background-color: #eee;
+        border-style: dashed;
+    }
+
+    .ui-state-highlight {
+        background-color: #8ca18c;
+    }
+
+    .puzzleButton {
+        display: flex;
+        justify-content: center;
+    }
+
+/***** SCENES 1 *****/
+#scene1 .boardContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/***** SCENES 2 *****/
+#scene2 .boardContainer {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+/***** SCENES 3 *****/
+#scene3 .boardContainer {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }

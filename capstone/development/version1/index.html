@@ -77,58 +77,103 @@
             </header>
 
             <div style="height: 50vh;"></div>
-            <section>
+            <section class="prePuzzleContent">
                 <p>The whispers of the American Dream began in the 1930s, where individuals seeked personal fulfillment and self-expression; the rhetoric of the <b>American Identity</b></p>
             </section>
             
 
-            <p>imagine there's functioning code for a puzzle game</p>
+            <p>this is functioning puzzle code, but the visuals are still WIP</p>
             <section class="puzzleContainer" id="puzzleOld">
-                <div class="boxes">
-                    <div class="pieceContainer"></div>
+                <div class="puzzleLayout">
+                    <div class="pieceContainer leftPieces"></div>
                     <div class="boardContainer"></div>
+                    <div class="pieceContainer rightPieces"></div>
                 </div>
-                <div class="puzzleButtons">
-                    <button id="resetPuzzle1">Reset</button>
+                <div class="puzzleButton">
                     <button id="finishPuzzle1">Done</button>
                 </div>
             </section>
 
-            <section></section>
             <div style="height: 40vh"></div>
-            
-            <div class="portal">
-                <img class="back" src="images/PortalBack.png" alt=" the portal itself">
-                <img src="images/PortalFront.png" alt="rocks in front of a portal">
-                <p>this will also only appear at the end after puzzle is completed</p>
-            </div>
-
-            <div style="height: 40vh"></div>
+            <section class="postPuzzleContent" style="display: none">
+                <div class="portal">
+                    <img class="back" src="images/PortalBack.png" alt=" the portal itself">
+                    <img src="images/PortalFront.png" alt="rocks in front of a portal">
+                    <p>this will also only appear at the end after puzzle is completed</p>
+                </div>
+                <div style="height: 40vh"></div>
+            </section>
         </div>
         
     </div>
 
     <div id="scene2" class="hidden">
-        <div class="content">
+        <div class="scenes">
             <header>
                 <h1 class="title3">THIS IS AMERICA</h1>
                 <div class="yearDisp"><p>202X</p></div>
             </header>
 
-            <div class="portal">
-                <img class="back" src="images/PortalBack.png" alt=" the portal itself">
-                <img src="images/PortalFront.png" alt="rocks in front of a portal">
-            </div>
+            <div style="height: 50vh;"></div>
+            <section class="prePuzzleContent">
+                <p>Imagine there's content here talking about the American Dream in the present day context</p>
+            </section>
+
+            <section class="puzzleContainer" id="puzzlePresent">
+                <div class="puzzleLayout">
+                    <div class="pieceContainer leftPieces"></div>
+                    <div class="boardContainer"></div>
+                    <div class="pieceContainer rightPieces"></div>
+                </div>
+                <div class="puzzleButton">
+                    <button id="finishPuzzle2">Done</button>
+                </div>
+            </section>
+
+            <div style="height: 40vh"></div>
+            <section class="postPuzzleContent" style="display: none">
+                <div class="portal">
+                    <img class="back" src="images/PortalBack.png" alt=" the portal itself">
+                    <img src="images/PortalFront.png" alt="rocks in front of a portal">
+                    <p>this will also only appear at the end after puzzle is completed</p>
+                </div>
+                <div style="height: 40vh"></div>
+            </section>
         </div>
         
     </div>
 
     <div id="scene3" class="hidden">
-        <div class="content">
+        <div class="scenes">
             <header>
                 <h1 class="title4">???</h1>
                 <div class="yearDisp"><p id="randNum">XXXX</p></div>
             </header>
+
+            <div style="height: 50vh;"></div>
+            <section class="prePuzzleContent">
+                <p>Speculation of what the future holds</p>
+            </section>
+            
+
+            
+            <section class="puzzleContainer" id="puzzleFuture">
+                <div class="puzzleLayout">
+                    <div class="pieceContainer leftPieces"></div>
+                    <div class="boardContainer"></div>
+                    <div class="pieceContainer rightPieces"></div>
+                </div>
+                <div class="puzzleButton">
+                    <button id="finishPuzzle3">Done</button>
+                </div>
+            </section>
+
+            <div style="height: 40vh"></div>
+            <section class="postPuzzleContent" style="display: none">
+                <p>maybe have something here for more information/webpage reset</p>
+                <div style="height: 40vh"></div>
+            </section>
+            
 
         </div>
         
