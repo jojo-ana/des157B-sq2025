@@ -3,6 +3,59 @@ body {
     /* background: radial-gradient(circle,rgba(32, 31, 31, 1) 0%, rgba(8, 9, 16, 1) 100%); */
 }
 
+#welcomeOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.overlayBackdrop {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+.overlayContent {
+    position: relative;
+    background: white;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    max-width: 400px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    z-index: 10;
+}
+.overlayContent h2 {
+    margin-bottom: 1rem;
+    font-family: "Roboto", sans-serif;
+    color: #333;
+}
+.overlayContent p {
+    margin: 0.5rem 0 1rem;
+    color: #555;
+}
+.overlayContent ol {
+    text-align: left;
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #444;
+    font-family: "Space Mono", monospace;
+}
+#closeOverlayBtn {
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#closeOverlayBtn:hover {
+    background-color: #005fa3;
+}
+
 /***** GENERAL CONTENT *****/
 
 .content {
@@ -202,7 +255,7 @@ h1.title {
     letter-spacing: 14px;
 }
 
-.puzzleContainer {
+/* .puzzleContainer {
     width: 1000px;
     margin: 5px auto;
     padding: 5px;
@@ -215,4 +268,91 @@ h1.title {
     display: flex;
     gap: 30px;
     justify-content: space-between;
+} */
+
+
+/* TEST FOR SHI CAUSE I CANT THINK*/
+    .puzzleContainer {
+        width: 95vw;
+        margin: 5px auto;
+        padding: 5px;
+        position: relative;
+        align-items: center;
+        background-color: #AFAFB8;
+        border: 0.2px solid #D9D9D9;
+    }
+
+    .puzzleLayout {
+        display: flex;
+        gap: 30px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+    }
+
+    .pieceContainer {
+        width: 300px;
+        height: 460px;
+        position: relative;
+        background-color: #f0f0f0;
+        border: 1px solid #ccc;
+    }
+
+    .boardContainer {
+        width: 90vw;
+        max-width: 460px;
+        aspect-ratio: 1 / 1;
+        display: grid;
+        
+        gap: 5px;
+        padding: 5px;
+        background-color: #AFAFB8;
+        box-sizing: border-box;
+    }
+
+    .piece, .droppableSpace {
+        width: 112.5px;
+        height: 112.5px;
+        border: 0.2px solid #D9D9D9;
+        font-size: 30px;
+        font-weight: bold;
+        color: #333;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-sizing: border-box;
+        background-color: white;
+        cursor: move;
+    }
+
+    .droppableSpace {
+        background-color: #eee;
+        border-style: dashed;
+    }
+
+    .ui-state-highlight {
+        background-color: #8ca18c;
+    }
+
+    .puzzleButton {
+        display: flex;
+        justify-content: center;
+    }
+
+/***** SCENES 1 *****/
+#scene1 .boardContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+/***** SCENES 2 *****/
+#scene2 .boardContainer {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+/***** SCENES 3 *****/
+#scene3 .boardContainer {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
 }
