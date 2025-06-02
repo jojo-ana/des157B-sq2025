@@ -185,8 +185,6 @@
                     wrapper.appendChild(img);
                     piece.appendChild(wrapper);
 
-                    // piece.innerText = num; ///// Change out the content once you have visuals
-
                     piece.style.position = "absolute";
                     piece.style.top = Math.random() * 300 + "px";
                     piece.style.left = Math.random() * 50 + "px";
@@ -209,6 +207,7 @@
 
 
                 // checking to see if the elements are in the right place using a switch
+                //// with this code, see if i can separate the "checking" function and the counter function; when the user completes enough, content is displayed
                 finishButton.addEventListener("click", function () {
                     const allSlots = sceneElement.querySelectorAll(".droppableSpace");
                     let isCorrect = true;
@@ -222,10 +221,8 @@
 
                     if (isCorrect) {
                         postContent.style.display = "flex";
-
                         const sceneName = sceneId.replace("#scene", "");
                         boardContainer.innerHTML = "";
-
                         boardContainer.style.display = "block";
 
                         const fullImage = document.createElement("img");
@@ -243,8 +240,6 @@
                             duration: 1,
                             ease: "power2.out"
                         });
-
-
                     } else {
                         alert("Some pieces are missing or incorrectly placed!");
                     }
@@ -256,7 +251,6 @@
                 for (let i = 1; i <= count; i++) {
                     pieces.push(i);
                 }
-
                 return pieces.sort(() => Math.random() - 0.5); //https://www.codemzy.com/blog/shuffle-array-javascript 
             }
 
@@ -286,12 +280,9 @@
                         left: 0,
                         position: "relative"
                         }).appendTo($(this));
-
                     }
                 });
             }
-
-            
         });
 
     });
