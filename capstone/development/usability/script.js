@@ -144,9 +144,9 @@
         $(document).ready(function () {
             // Scene Object
             const scenes = [
-                {id: "#scene1", grid: 3},
-                {id: "#scene2", grid: 4},
-                {id: "#scene3", grid: 5},
+                {id: "#scene1", grid: 2},
+                {id: "#scene2", grid: 3},
+                {id: "#scene3", grid: 4},
             ];
 
             scenes.forEach(scene => initializePuzzle(scene.id, scene.grid));
@@ -202,6 +202,7 @@
                     const allSlots = sceneElement.querySelectorAll(".droppableSpace");
                     let isCorrect = true;
 
+                    // with this code, see if it's possible to have a counter so that when a certain amt of tiles are correct, a piece of information is displayed
                     allSlots.forEach(slot => {
                         const piece = slot.querySelector(".piece");
                         if (!piece || piece.dataset.number != slot.dataset.location) {
