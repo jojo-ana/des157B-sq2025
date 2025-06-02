@@ -158,7 +158,6 @@
                 const boardContainer = sceneElement.querySelector(".boardContainer");
                 const postContent = sceneElement.querySelector(".postPuzzleContent");
                 const finishButton = sceneElement.querySelector("button");
-                const puzzleInfo1 = sceneElement.querySelector(".puzzleInfo1");
 
                 // Clear containers
                 pieceContainers.forEach(container => container.innerHTML = "");
@@ -174,11 +173,23 @@
                     const piece = document.createElement("div");
                     piece.className = "piece";
                     piece.dataset.number = num;
-                    piece.innerText = num; ///// Change out the content once you have visuals joanah
+
+                    const wrapper = document.createElement("div");
+                    wrapper.classList.add("piece-wrapper");
+
+                    const sceneName = sceneId.replace("#scene", "");
+                    const img = document.createElement("img");
+                    img.src = `images/puzzle${sceneName}/puzzle${num}.png`;
+                    img.alt = `Puzzle piece ${num}`;
+
+                    wrapper.appendChild(img);
+                    piece.appendChild(wrapper);
+
+                    // piece.innerText = num; ///// Change out the content once you have visuals
 
                     piece.style.position = "absolute";
                     piece.style.top = Math.random() * 300 + "px";
-                    piece.style.left = Math.random() * 80 + "px";
+                    piece.style.left = Math.random() * 50 + "px";
 
                     const targetContainer = index < midPoint ? pieceContainers[0] : pieceContainers[1];
                     targetContainer.style.position = "relative";
@@ -202,7 +213,6 @@
                     const allSlots = sceneElement.querySelectorAll(".droppableSpace");
                     let isCorrect = true;
 
-                    // with this code, see if it's possible to have a counter so that when a certain amt of tiles are correct, a piece of information is displayed
                     allSlots.forEach(slot => {
                         const piece = slot.querySelector(".piece");
                         if (!piece || piece.dataset.number != slot.dataset.location) {
@@ -212,6 +222,29 @@
 
                     if (isCorrect) {
                         postContent.style.display = "flex";
+
+                        const sceneName = sceneId.replace("#scene", "");
+                        boardContainer.innerHTML = "";
+
+                        boardContainer.style.display = "block";
+
+                        const fullImage = document.createElement("img");
+                        fullImage.src = `images/puzzle${sceneName}/puzzle-complete.png`;
+                        fullImage.alt = "Completed puzzle illustration of an old newspaper";
+                        fullImage.style.width = "100%";
+                        fullImage.style.height = "100%";
+                        fullImage.style.objectFit = "contain";
+
+                        boardContainer.appendChild(fullImage);
+                        gsap.from(fullImage, {
+                            rotate: 60,
+                            opacity: 0,
+                            scale: 0.9,
+                            duration: 1,
+                            ease: "power2.out"
+                        });
+
+
                     } else {
                         alert("Some pieces are missing or incorrectly placed!");
                     }
@@ -254,26 +287,8 @@
                         position: "relative"
                         }).appendTo($(this));
 
-                        if (piece.data("number") == $(this).data("location")) {
-                        piece.css("background-color", "#b3e6b3");
-                        } else {
-                        piece.css("background-color", "#f8d7da");
-                        }
-
-                        // if it’s correct, increment counter
-                        sceneElement._adjustCorrectCount(isNowCorrect ? +1 : 0);
                     }
                 });
-            }
-
-            function adjustCorrectCount(delta) {
-                correctCount += delta;
-                updateCounter();
-
-                // Only for scene1, show puzzleInfo1 if 2 or more correct
-                if (sceneId === "#scene1" && correctCount >= 2) {
-                    puzzleInfo.classList.remove("hidden");
-                }
             }
 
             
