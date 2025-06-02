@@ -24,7 +24,7 @@
 </head>
 
 <body>
-    <div id="welcomeOverlay" style="display:none;">
+    <div id="welcomeOverlay" style="display:none;" class="hidden">
         <div class="overlayBackdrop"></div>
         <div class="overlayContent">
             <h2>Welcome to...Title is in progress</h2>
@@ -52,6 +52,13 @@
                         </textPath>
                     </text>
                 </svg>
+                <div class="headerBg">
+                    <img src="images/libertyStatue.png" alt="imagery of the statue of liberty" id="headerBGIMG">
+                    <svg width="209" height="194" viewBox="0 0 209 194" fill="none" xmlns="http://www.w3.org/2000/svg" id="headerBGSVG">
+                        <ellipse cx="104.5" cy="97" rx="104.5" ry="97" fill="#D9D9D9"/>
+                    </svg>
+
+                </div>
             </header>
 
             <div class="portal">
@@ -94,6 +101,10 @@
             <div style="height: 50vh;"></div>
             <section class="prePuzzleContent">
                 <p>The whispers of the American Dream began in the 1930s, where individuals seeked personal fulfillment and self-expression; the rhetoric of the <b>American Identity</b></p>
+
+                <p>Amid economic instability from the 1929 Stock Market Crash and a shifting political climate with President Roosevelt’s New Deal looking for recovery and reform, people held tightly to hope, refusing to let go of the belief in a better future.</p>
+
+                <p>There was a shift from pursuing a path of wealth to one of stability to trying to find a way for resilience and recovery.</p>
             </section>
             
 
@@ -108,6 +119,10 @@
                     <button id="finishPuzzle1">Done</button>
                 </div>
             </section>
+
+            <div class="puzzleInfo1 hidden">
+                <p>This is extra information that is only displayed when the user gets enouch right</p>
+            </div>
 
             <div style="height: 40vh"></div>
             <section class="postPuzzleContent" style="display: none">

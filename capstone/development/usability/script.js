@@ -66,22 +66,18 @@
                     mask: "words"
                 });
 
-                gsap.from(split.words, {
-                    y: 100,
-                    ease: "expoScale",
-                    autoAlpha: 0,
-                    stagger: 0.25
-                });
+                gsap.from(split.words, { y: 100,  ease: "expoScale", autoAlpha: 0,  stagger: 0.25 });
                 console.log("animation 0 is playing now");
             });
             
-            ///// SVG Animation
-            gsap.from(".visuals", {
-                duration: 1,
-                drawSVG: 0,
-                delay: 0.5,
-                stagger: 0.25
-            });
+            gsap.from(".visuals", { duration: 1, drawSVG: 0, delay: 0.5, stagger: 0.25 });
+
+            gsap.fromTo("#headerBGIMG", 
+                { rotationX: -90, opacity: 0, z: 50}, { rotationX: 0, opacity: 1, z: 0, duration: 2.2, delay: 0.25, ease: "power3.out" });
+
+            gsap.fromTo("#headerBGSVG", 
+                { scale: 0.5, opacity: 0 },
+                { scale: 1, opacity: 1, duration: 1.6, delay: 0.5, ease: "bounce.out" });
         }
 
 ////////// SCENE 1: Animations
@@ -162,6 +158,7 @@
                 const boardContainer = sceneElement.querySelector(".boardContainer");
                 const postContent = sceneElement.querySelector(".postPuzzleContent");
                 const finishButton = sceneElement.querySelector("button");
+                const puzzleInfo1 = sceneElement.querySelector(".puzzleInfo1");
 
                 // Clear containers
                 pieceContainers.forEach(container => container.innerHTML = "");
@@ -261,8 +258,21 @@
                         } else {
                         piece.css("background-color", "#f8d7da");
                         }
+
+                        // if it’s correct, increment counter
+                        sceneElement._adjustCorrectCount(isNowCorrect ? +1 : 0);
                     }
                 });
+            }
+
+            function adjustCorrectCount(delta) {
+                correctCount += delta;
+                updateCounter();
+
+                // Only for scene1, show puzzleInfo1 if 2 or more correct
+                if (sceneId === "#scene1" && correctCount >= 2) {
+                    puzzleInfo.classList.remove("hidden");
+                }
             }
 
             
