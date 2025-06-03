@@ -136,6 +136,8 @@ p {
 
 .portal img {
     position: absolute;
+    width: 80vw;
+    max-width: 400px;
     width: 450px;
     height: auto;
     bottom: 0%;
