@@ -13,7 +13,12 @@
     background: rgba(0, 0, 0, 0.6);
 }
 .overlayContent {
-    position: relative;
+    /* position: relative; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
     background: white;
     padding: 2rem 2.5rem;
     border-radius: 12px;
@@ -51,12 +56,27 @@
     background-color: #005fa3;
 }
 
-body {
-    background: #201F1F;
-    /* background: radial-gradient(circle,rgba(32, 31, 31, 1) 0%, rgba(8, 9, 16, 1) 100%); */
-    overflow-x: hidden;
+.closeOverlay {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
 }
 
+.closeOverlay:hover {
+    color: #000;
+}
+
+
+body {
+    background: #201F1F;
+    overflow-x: hidden;
+}
 
 
 /***** GENERAL CONTENT *****/
@@ -285,110 +305,105 @@ h1.title {
     letter-spacing: 14px;
 }
 
-.prePuzzleContent {
+.prePuzzleContent, .postPuzzleContent {
     padding: 1% 10%;
     display: flex;
     flex-direction: column;
     gap: 28px;
 }
 
-.postPuzzleContent {
-    flex-direction: column;
-}
-
 /* TEST FOR SHI CAUSE I CANT THINK*/
-    .puzzleContainer {
-        width: 95vw;
-        margin: 5px auto;
-        padding: 5px;
-        position: relative;
-        align-items: center;
-    }
-
-    .puzzleLayout {
-        display: flex;
-        gap: 30px;
-        justify-content: center;
-        align-items: center;
-        margin-top: 30px;
-    }
-
-    .pieceContainer {
-        width: 300px;
-        height: 460px;
-        position: relative;
-        background-color: #f0f0f0;
-        border: 1px solid #ccc;
-        overflow: visible;
-    }
-
-    .boardContainer {
-        width: 90vw;
-        aspect-ratio: 1 / 1;
-        display: grid;
-        max-width: 600px;
-        gap: 2px;
-        padding: 5px;
-        background-color: #AFAFB8;
-        box-sizing: border-box;
-    }
-
-    .piece, .droppableSpace {
-        width: 100%;
-        font-size: 30px;
-        font-weight: bold;
-        color: #333;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-sizing: border-box;
-        cursor: move;
-    }
-
-    .droppableSpace {
-        border-style: dashed;
-    }
-
-    .ui-state-highlight {
-        background-color: #8ca18c;
-    }
-
-    .puzzleButton {
-        display: flex;
-        justify-content: center;
-    }
-
-    .piece {
-        width: 100%;
-        position: absolute;
-        overflow: visible;
+.puzzleContainer {
+    width: 95vw;
+    margin: 5px auto;
+    padding: 5px;
+    position: relative;
+    align-items: center;
 }
 
-    .piece-wrapper,
-    .piece-wrapper img {
-        width: 100%;
+.puzzleLayout {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
 
-    }
-    
-    .puzzleButton button {
-        background-color: #5b5c7c;
-        color: white;
-        border: none;
-        padding: 12px 24px;
-        font-size: 20px;
-        font-weight: bold;
-        border-radius: 8px;
-        cursor: pointer;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease, transform 0.2s ease;
-        margin: 20px auto;
-        display: block;
-    }
+.pieceContainer {
+    width: 300px;
+    height: 460px;
+    position: relative;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    overflow: visible;
+}
 
-    .puzzleButton button:hover {
-        background-color: #595aa0;
-        transform: translateY(-2px);
-    }
+.boardContainer {
+    width: 90vw;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    max-width: 600px;
+    gap: 2px;
+    padding: 5px;
+    background-color: #AFAFB8;
+    box-sizing: border-box;
+}
+
+.piece, .droppableSpace {
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    cursor: move;
+}
+
+.droppableSpace {
+    border-style: dashed;
+}
+
+.ui-state-highlight {
+    background-color: #8ca18c;
+}
+
+.puzzleButton {
+    display: flex;
+    justify-content: center;
+}
+
+.piece {
+    width: 100%;
+    position: absolute;
+    overflow: visible;
+}
+
+.piece-wrapper, .piece-wrapper img {
+    width: 100%;
+
+}
+
+.puzzleButton button {
+    background-color: #5b5c7c;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 20px auto;
+    display: block;
+}
+
+.puzzleButton button:hover {
+    background-color: #595aa0;
+    transform: translateY(-2px);
+}
 
 
 /***** SCENES 1 *****/
@@ -422,10 +437,43 @@ h1.title {
 }
 
 /***** SCENES 2 *****/
+#scene2, #scene2 .yearDisp p {
+    background: ghostwhite;
+}
+
+#scene2 h1, #scene2 p {
+    color: #201F1F;
+}
+
 #scene2 .boardContainer {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    background: none;
+    width: 22vw;
+    justify-items: center;
+    gap: 2px;
+    justify-content: center;
 }
+
+
+
+#scene2 .puzzleContainer {
+    background-image: url("images/presentMemPhone.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#scene2 .droppableSpace {
+    width: 100px;
+    height: 100px;
+}
+
+#scene2 .piece-wrapper, #scene2 .piece-wrapper img {
+    width: 100px;
+}
+
+
 
 /***** SCENES 3 *****/
 #scene3 .boardContainer {

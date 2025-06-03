@@ -14,30 +14,31 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!-- link to gsap js -->
-    <script src="js/gsap.min.js" defer></script>
-    <script src="js/SplitText.min.js" defer></script>
-    <script src="js/DrawSVGPlugin.min.js" defer></script>
+    <script src="js/gsap.min.js" ></script>
+    <script src="js/SplitText.min.js" ></script>
+    <script src="js/DrawSVGPlugin.min.js" ></script>
 
     <!-- link to jquerry js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" ></script>
 
     <!-- link to particles js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" ></script>
 
     <!-- add the link to the Animate on Scroll js here -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" ></script>
 
     <!-- link to custom js -->
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
+
 </head>
 
 <body>
-    <div id="welcomeOverlay" style="display:none;" class="hidden">
+    <div id="welcomeOverlay" style="display:none;">
         <div class="overlayBackdrop"></div>
         <div class="overlayContent">
-            <h2>Welcome to...Title is in progress</h2>
-            <p>Hello! Imagine you are from a lower/middle-class immigrant family that just arrived in America after hearing so much about living the ideal life. (Sadly alot of the written content is still being written up but it'll get here eventually, but the website navigation and functional side of the code is woking)</p>
+            <h2>Welcome to Exploring the Failure of the American Dream</h2>
+            <p>Hello! Imagine you are from a lower/middle-class immigrant family that just arrived in America after hearing so much about living the ideal life.</p>
             <p>Please try these tasks/think about during your visit:</p>
             <ol>
                 <li>Navigation through the website and its different scenes</li>
@@ -138,21 +139,29 @@
             </section>
 
             <div id="puzzleInfo1" class="hidden">
-                <div class="overlayScene1">
-                    <p>James Truslow Adams coined the phrase “The American Dream” in his 1931 book <i>The Epic of America</i> as an idealization of life in America, one of the contributions leading to the good welfare of the people and in the world. By rising above the environment one is born into greatness</p>
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene1 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p>James Truslow Adams coined the phrase “The American Dream” in his 1931 book <i>The Epic of America</i> as an idealization of life in America. At the heart, it's the collective hope that people can rise above their circumstances. In this vision, the dream is not solely about personal success, but about contributing to the welfare and progress of society as a whole.</p>
                 </div>
             </div>
 
             
             <section class="postPuzzleContent" style="display: none">
                 <p class="enterText">Scroll</p>
-                <p>imagine information here</p>
+                <p>The social side of the American Dream showed that real progress comes when people work together. It meant changing how we see gender roles, standing up for workers’ rights, and pushing back against racial injustice. These efforts proved that no one rises alone — we grow by lifting each other up.</p>
+
+                <p>It is in this spirit of togetherness that the dream truly took root, reminding us that true greatness is realized not alone, but through the bonds we forge and the communities we built.</p>
+
+                <p>note: will add animation to the latter content</p>
+                
                 <div style="height: 40vh"></div>
                 <div class="portal">
                     <img class="back" src="images/PortalBack.png" alt=" the portal itself">
                     <img src="images/PortalFront.png" alt="rocks in front of a portal">
                 </div>
-                <div><p>sources: insert here</p></div>
+                <!-- <div><p>sources: insert here</p></div> -->
             </section>
             <div style="height: 20vh"></div>
         </div>
@@ -167,13 +176,26 @@
 
             <div style="height: 50vh;"></div>
             <section class="prePuzzleContent">
-                <p>Transformed from American stability to one of American exceptionalism–a narrative of shared experiences but ambiguous to make it seem it can be applied to all. However, the mental model has shifted from collective growth to one of individual growth, how one can achieve their American Dream. America is a land of possibility and opportunity, allowing for <b>social mobility</b> and determining your own fate through hard work.</p>
+                <div data-aos="fade-up">
+                    <p>Transformed from American stability to one of American exceptionalism–a narrative of shared experiences but ambiguous to make it seem it can be applied to all. However, the mental model has shifted from collective growth to one of individual growth, how one can achieve their American Dream. America is a land of possibility and opportunity, allowing for <b>social mobility</b> and determining your own fate through hard work.</p>
+                </div>
 
-                <p>But the dream comes at a cost, literally.</p>
+                <div data-aos="fade-up">
+                    <p>But the dream comes at a cost, literally.</p>
+                </div>
 
-                <p>We follow the path that James Adams warns us of, of workers following the capitalist system with no thought (under the impression that it will lead to life success) and thus are exploited, and taken advantage of.</p>
+                <div data-aos="fade-up">
+                    <p>As society places more focus on individual success, people are more likely to feel disconnected and anxious, with shared values and a sense of belonging gradually fading away.</p>
+                </div>
 
-                <p>Now millionaires are seen as an ideal life to live, an achievable life. However, while capitalism has been successful at boosting wealth, it fails to redistribute it.</p>
+
+                <div data-aos="fade-up">
+                    <p>James Truslow Adams warned of a future where workers blindly follow a capitalist system, convinced it will lead to success, yet unaware of how it often exploits them. Today, that warning rings true.</p>
+                </div>
+
+                <div data-aos="fade-up">
+                    <p></p>
+                </div>
             </section>
 
             <section class="puzzleContainer" id="puzzlePresent">
@@ -187,12 +209,33 @@
                 </div>
             </section>
 
-            <div style="height: 40vh"></div>
+            <div id="puzzleInfo2" class="hidden">
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene2 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p> Many continue to chase the promise of upward mobility, believing hard work alone guarantees prosperity. But the system they participate in too often rewards wealth over labor, leaving workers undervalued and undercompensated. The ideal of the self-made millionaire has become the modern version of the American Dream, something marketed as attainable, yet realistically out of reach for most.</p>
+                </div>
+            </div>
+
+            <div id="puzzleInfo3" class="hidden">
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene2 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p>Capitalism has created great wealth, but it’s not shared equally. Those born into privilege have access to better education, networks, and safety nets, making success easier. Meanwhile, low-income people face constant barriers, stuck in a cycle where the rich keep rising and the working class stays in place, no matter how hard they work.</p>
+                    <!-- FIND NUMERICAL FACT TO SUPPORT THIS -->
+                </div>
+            </div>
+
+            <!-- <div style="height: 40vh"></div> -->
             <section class="postPuzzleContent" style="display: none">
+                <p class="enterText">Scroll</p>
+                <p>As inequality grows and it becomes harder to move up in society, real risks start to appear. Many young people, weighed down by debt, high rent, and low pay, feel shut out of stable futures. This frustration leads to distrust, divides communities, and fuels movements that offer quick fixes instead of real solutions. If nothing changes, it won’t just hurt the economy — it could weaken our democracy too.</p>
+                
                 <div class="portal">
                     <img class="back" src="images/PortalBack.png" alt=" the portal itself">
                     <img src="images/PortalFront.png" alt="rocks in front of a portal">
-                    <p>this will also only appear at the end after puzzle is completed</p>
                 </div>
                 <div style="height: 40vh"></div>
             </section>
@@ -209,9 +252,13 @@
 
             <div style="height: 50vh;"></div>
             <section class="prePuzzleContent">
-                <p>Picture a future where your hard work truly matters, where no matter where you come from, your effort is respected and rewarded. Imagine a country where everyone has enough to eat, where jobs are not just dreams but real chances to build a better life, and where nobody is left struggling alone. This is not just a hope, it is a vision of a fair America where your voice counts, your family thrives, and your sacrifices are seen and honored. Together, we can build that future.</p>
+                <div data-aos="fade-up">
+                    <p>Picture a future where your hard work truly matters, where no matter where you come from, your effort is respected and rewarded. Imagine a country where everyone has enough to eat, where jobs are not just dreams but real chances to build a better life, and where nobody is left struggling alone. This is not just a hope, it is a vision of a fair America where your voice counts, your family thrives, and your sacrifices are seen and honored. Together, we can build that future.</p>
+                </div>
 
-                <p>In this future America, fairer redistribution and financial reform create stability and support lasting growth. This new system ensures opportunity and shared prosperity for everyone, building a stronger, more secure nation.</p>
+                <div data-aos="fade-up">
+                    <p>In this future America, fairer redistribution and financial reform create stability and support lasting growth. This new system ensures opportunity and shared prosperity for everyone, building a stronger, more secure nation.</p>
+                </div>
             </section>
             
 
@@ -227,8 +274,36 @@
                 </div>
             </section>
 
+            <div id="puzzleInfo4" class="hidden">
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene3 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p>placeholder info box 3</p>
+                </div>
+            </div>
+
+            <div id="puzzleInfo5" class="hidden">
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene3 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p>placeholder info box 4</p>
+                </div>
+            </div>
+
+            <div id="puzzleInfo6" class="hidden">
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene3 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p>placeholder info box 5</p>
+                </div>
+            </div>
+
             <div style="height: 40vh"></div>
             <section class="postPuzzleContent" style="display: none">
+                <p class="enterText">Scroll</p>
                 <p>maybe have something here for more information/webpage reset</p>
                 <div style="height: 40vh"></div>
             </section>
