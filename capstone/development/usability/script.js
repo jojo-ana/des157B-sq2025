@@ -1,13 +1,9 @@
 (function(){
     "use strict";
-
     
     document.addEventListener("DOMContentLoaded", () => { 
-        
         AOS.init();
-        
         gsap.registerPlugin(SplitText, DrawSVGPlugin);
-        // gsap.registerPlugin(DrawSVGPlugin);
         /// Script for Scene Changing
         const portal = document.querySelectorAll('.portal');
         const scene0 = document.querySelector('#opening');
@@ -30,11 +26,17 @@
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
             const yOffset = scrollY * 0.55;
+            const yOffset2 = scrollY * 0.1;
 
             let prePuzzleParagraphs = document.querySelectorAll('.prePuzzleContent div');
             prePuzzleParagraphs.forEach(paragraph => {
                 paragraph.style.transform = `translateY(-${yOffset}px)`;
             });
+
+            // let postPuzzleParagraphs = document.querySelectorAll('.postPuzzleContent div.postPuzzleText');
+            // postPuzzleParagraphs.forEach(paragraph => {
+            //     paragraph.style.transform = `translateY(-${yOffset2}px)`;
+            // });
 
         });
 
@@ -248,9 +250,11 @@
                     const totalSlots = sceneElement.querySelectorAll(".droppableSpace").length;
                     const isCorrect = correctCount === totalSlots;
 
+                    // $('html, body').animate({})
+
                     if (isCorrect) {
                         revealCompletedPuzzle(sceneId, boardContainer, postContent);
-                        
+                        AOS.refresh();
                     } else {
                         alert("Some pieces are missing or incorrectly placed!");
                     }
@@ -272,7 +276,6 @@
 
                     boardContainer.appendChild(fullImage);
                     gsap.from(fullImage, {
-                        // rotate: 60,
                         opacity: 0,
                         scale: 0.9,
                         duration: 1,

@@ -93,14 +93,14 @@ body {
 
 .showing {
     visibility: visible;
-    opacity: 1;
+    /* opacity: 1; */
     display: block;
 }
 
 .hidden {
     visibility: hidden;
     display: none;
-    opacity: 0;
+    /* opacity: 0; */
 }
 
 /***** TYPOGRAPHY STYLING *****/
@@ -252,21 +252,31 @@ h1.title {
 }
 
 .enterText {
-  position: absolute;
-  display: inline-block;
-  bottom: 0px;
+    position: absolute;
+    display: inline-block;
+    bottom: 0px;
     color: #6E6E6E;
 }
 
 .enterText::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 8px solid #6E6E6E;
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid #6E6E6E;
+    animation: UpDownMove 1s linear infinite;
+}
+
+@keyframes UpDownMove {
+    0%, 100% {
+        transform: translateY(-50%) translateX(-50%);
+    }
+    50% {
+        transform: translateY(0%) translateX(-50%);
+    }
 }
 
 /***** SCENES: General Styling *****/
@@ -438,6 +448,16 @@ h1.title {
 
 #scene1 .enterText::before {
     transform: translateX(-50%) rotate(180deg);
+    animation: UpDownMoveScroll 1s linear infinite;
+}
+
+@keyframes UpDownMoveScroll {
+    0%, 100% {
+        transform: translateY(-50%) translateX(-50%) rotate(180deg);
+    }
+    50% {
+        transform: translateY(0%) translateX(-50%) rotate(180deg);
+    }
 }
 
 /***** SCENES 2 *****/
