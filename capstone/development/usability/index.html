@@ -10,6 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
+    <!-- add the link to Animate on Scroll css here -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <!-- link to gsap js -->
     <script src="js/gsap.min.js" defer></script>
     <script src="js/SplitText.min.js" defer></script>
@@ -18,6 +21,12 @@
     <!-- link to jquerry js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+
+    <!-- link to particles js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- add the link to the Animate on Scroll js here -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <!-- link to custom js -->
     <script src="script.js" defer></script>
@@ -92,6 +101,7 @@
     </div>
 
     <div id="scene1" class="hidden">
+        <div id="particles-js"></div>
         <div class="scenes">
             <header>
                 <h1 class="title2">GREAT DEPRESSION</h1>
@@ -100,11 +110,19 @@
 
             <div style="height: 50vh;"></div>
             <section class="prePuzzleContent">
-                <p>The whispers of the American Dream began in the 1930s, where individuals seeked personal fulfillment and self-expression; the rhetoric of the <b>American Identity</b></p>
+                <div data-aos="fade-up">
+                    <p>The whispers of the American Dream began in the 1930s, where individuals seeked personal fulfillment and self-expression; the rhetoric of the <b>American Identity</b></p>
+                </div>
 
-                <p>Amid economic instability from the 1929 Stock Market Crash and a shifting political climate with President Roosevelt’s New Deal looking for recovery and reform, people held tightly to hope, refusing to let go of the belief in a better future.</p>
+                <div data-aos="fade-up">
+                    <p>Amid economic instability from the 1929 Stock Market Crash and a shifting political climate with President Roosevelt’s New Deal looking for recovery and reform, people held tightly to hope, refusing to let go of the belief in a better future.</p>
 
-                <p>There was a shift from pursuing a path of wealth to one of stability to trying to find a way for resilience and recovery.</p>
+                </div>
+                
+                <div data-aos="fade-up">
+                    <p>There was a shift from pursuing a path of wealth to one of stability to trying to find a way for resilience and recovery.</p>
+                </div>
+
             </section>
             
 
@@ -125,17 +143,19 @@
                 </div>
             </div>
 
-            <div style="height: 40vh"></div>
+            
             <section class="postPuzzleContent" style="display: none">
+                <p class="enterText">Scroll</p>
+                <p>imagine information here</p>
+                <div style="height: 40vh"></div>
                 <div class="portal">
                     <img class="back" src="images/PortalBack.png" alt=" the portal itself">
                     <img src="images/PortalFront.png" alt="rocks in front of a portal">
-                    <p>this will also only appear at the end after puzzle is completed</p>
                 </div>
-                <div style="height: 40vh"></div>
+                <div><p>sources: insert here</p></div>
             </section>
+            <div style="height: 20vh"></div>
         </div>
-        
     </div>
 
     <div id="scene2" class="hidden">
@@ -217,5 +237,9 @@
         </div>
         
     </div>
+
+    <script>
+        AOS.init();
+    </script>
 </body>
 </html>

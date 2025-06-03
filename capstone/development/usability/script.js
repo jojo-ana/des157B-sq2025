@@ -7,7 +7,17 @@
         overlay.style.display = 'flex';
 
         closeBtn.addEventListener('click', () => {
-        overlay.style.display = 'none';
+            overlay.style.display = 'none';
+        });
+    });
+
+    window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        const yOffset = scrollY * 0.55;
+
+        let prePuzzleParagraphs = document.querySelectorAll('.prePuzzleContent div');
+        prePuzzleParagraphs.forEach(paragraph => {
+            paragraph.style.transform = `translateY(-${yOffset}px)`;
         });
     });
     
@@ -96,6 +106,59 @@
             });
             console.log("animation 1 is playing now");
         }
+
+        particlesJS("particles-js", {
+        "particles": {
+            "number": {
+            "value": 67,
+            "density": {
+                "enable": true,
+                "value_area": 800
+            }
+            },
+            "color": {
+            "value": "#ffffff"
+            },
+            "shape": {
+            "type": "circle",
+            "stroke": {
+                "width": 0,
+                "color": "#000000"
+            }
+            },
+            "opacity": {
+            "value": 0.312665351868777,
+            "random": false,
+            "anim": {
+                "enable": false,
+                "speed": 1,
+                "opacity_min": 0.1,
+                "sync": false
+            }
+            },
+            "size": {
+            "value": 3,
+            "random": true,
+            "anim": {
+                "enable": false,
+                "speed": 40,
+                "size_min": 0.1,
+                "sync": false
+            }
+            },
+            "line_linked": {
+            "enable": false,
+            "distance": 150,
+            "color": "#ffffff",
+            "opacity": 0.4,
+            "width": 1
+            },
+            "move": {
+            "enable": true,
+            "speed": 3.20,
+            }
+        }
+    });
 
 ////////// SCENE 2: Title Animation
         function animateScene2() {
