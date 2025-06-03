@@ -278,6 +278,8 @@ h1.title {
 
 .scenes header {
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .scenes::before {
@@ -426,13 +428,13 @@ h1.title {
     z-index: -1;
 }
 
-.postPuzzleContent .enterText {
+#scene1 .enterText {
     position: relative;
     text-align: center;
     margin: 0;
 }
 
-.postPuzzleContent .enterText::before {
+#scene1 .enterText::before {
     transform: translateX(-50%) rotate(180deg);
 }
 
