@@ -25,18 +25,12 @@
 
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
-            const yOffset = scrollY * 0.55;
-            const yOffset2 = scrollY * 0.1;
+            const yOffset = scrollY * 0.45;
 
             let prePuzzleParagraphs = document.querySelectorAll('.prePuzzleContent div');
             prePuzzleParagraphs.forEach(paragraph => {
                 paragraph.style.transform = `translateY(-${yOffset}px)`;
             });
-
-            // let postPuzzleParagraphs = document.querySelectorAll('.postPuzzleContent div.postPuzzleText');
-            // postPuzzleParagraphs.forEach(paragraph => {
-            //     paragraph.style.transform = `translateY(-${yOffset2}px)`;
-            // });
 
         });
 
