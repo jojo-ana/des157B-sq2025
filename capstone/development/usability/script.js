@@ -1,29 +1,12 @@
 (function(){
     "use strict";
-     window.addEventListener('load', () => {
-        const overlay = document.getElementById('welcomeOverlay');
-        const closeBtn = document.getElementById('closeOverlayBtn');
 
-        overlay.style.display = 'flex';
-
-        closeBtn.addEventListener('click', () => {
-            overlay.style.display = 'none';
-        });
-    });
-
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        const yOffset = scrollY * 0.55;
-
-        let prePuzzleParagraphs = document.querySelectorAll('.prePuzzleContent div');
-        prePuzzleParagraphs.forEach(paragraph => {
-            paragraph.style.transform = `translateY(-${yOffset}px)`;
-        });
-    });
     
-    document.addEventListener("DOMContentLoaded", (event) => {
-        gsap.registerPlugin(SplitText);
-        gsap.registerPlugin(DrawSVGPlugin);
+    document.addEventListener("DOMContentLoaded", () => { 
+        
+        AOS.init();
+        gsap.registerPlugin(SplitText, DrawSVGPlugin);
+        // gsap.registerPlugin(DrawSVGPlugin);
         /// Script for Scene Changing
         const portal = document.querySelectorAll('.portal');
         const scene0 = document.querySelector('#opening');
@@ -31,6 +14,27 @@
         const scene2 = document.querySelector('#scene2');
         const scene3 = document.querySelector('#scene3');
         let sceneCounter = 0;
+
+        window.addEventListener('load', () => {
+            const overlay = document.getElementById('welcomeOverlay');
+            const closeBtn = document.getElementById('closeOverlayBtn');
+
+            overlay.style.display = 'flex';
+
+            closeBtn.addEventListener('click', () => {
+                overlay.style.display = 'none';
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const yOffset = scrollY * 0.55;
+
+            let prePuzzleParagraphs = document.querySelectorAll('.prePuzzleContent div');
+            prePuzzleParagraphs.forEach(paragraph => {
+                paragraph.style.transform = `translateY(-${yOffset}px)`;
+            });
+        });
 
 
         function switchScenes() {
@@ -71,10 +75,7 @@
         function animateScene0() {
             ///// Title Animation
             document.fonts.ready.then(()=> {
-                let split = SplitText.create(".title", {
-                    type: "words",
-                    mask: "words"
-                });
+                let split = SplitText.create(".title", { type: "words", mask: "words" });
 
                 gsap.from(split.words, { y: 100,  ease: "expoScale", autoAlpha: 0,  stagger: 0.25 });
                 console.log("animation 0 is playing now");
@@ -93,72 +94,22 @@
 ////////// SCENE 1: Animations
         function animateScene1() {
             ///// Title Animation
-            let split = SplitText.create(".title2", {
-                type: "words",
-                mask: "words"
-            });
+            let split = SplitText.create(".title2", { type: "words", mask: "words" });
 
-            gsap.from(split.words, {
-                y: 100,
-                ease: "expoScale",
-                autoAlpha: 0,
-                stagger: 0.25
-            });
+            gsap.from(split.words, {  y: 100, ease: "expoScale", autoAlpha: 0, stagger: 0.25 });
             console.log("animation 1 is playing now");
         }
 
-        particlesJS("particles-js", {
+        particlesJS ("particles-js", {
         "particles": {
-            "number": {
-            "value": 67,
-            "density": {
-                "enable": true,
-                "value_area": 800
-            }
-            },
-            "color": {
-            "value": "#ffffff"
-            },
-            "shape": {
-            "type": "circle",
-            "stroke": {
-                "width": 0,
-                "color": "#000000"
-            }
-            },
-            "opacity": {
-            "value": 0.312665351868777,
-            "random": false,
-            "anim": {
-                "enable": false,
-                "speed": 1,
-                "opacity_min": 0.1,
-                "sync": false
-            }
-            },
-            "size": {
-            "value": 3,
-            "random": true,
-            "anim": {
-                "enable": false,
-                "speed": 40,
-                "size_min": 0.1,
-                "sync": false
-            }
-            },
-            "line_linked": {
-            "enable": false,
-            "distance": 150,
-            "color": "#ffffff",
-            "opacity": 0.4,
-            "width": 1
-            },
-            "move": {
-            "enable": true,
-            "speed": 3.20,
-            }
-        }
-    });
+            "number": { "value": 67, "density": { "enable": true, "value_area": 800 }},
+            "color": { "value": "#ffffff" },
+            "shape": { "type": "circle", "stroke": { "width": 0, "color": "#000000" }},
+            "opacity": { "value": 0.312665351868777, "random": false, "anim": { "enable": false, "speed": 1, "opacity_min": 0.1, "sync": false }},
+            "size": { "value": 3, "random": true, "anim": { "enable": false, "speed": 40, "size_min": 0.1, "sync": false }},
+            "line_linked": { "enable": false, "distance": 150, "color": "#ffffff", "opacity": 0.4,  "width": 1 },
+            "move": { "enable": true, "speed": 3.20,}}
+        });
 
 ////////// SCENE 2: Title Animation
         function animateScene2() {
