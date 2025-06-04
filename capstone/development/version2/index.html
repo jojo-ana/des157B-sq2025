@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>American Dream</title>
+
+    <!-- Normalize CSS for browser compatability -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- add the link to Animate on Scroll css here -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- link to gsap js -->
+    <script src="js/gsap.min.js" ></script>
+    <script src="js/SplitText.min.js" ></script>
+    <script src="js/DrawSVGPlugin.min.js" ></script>
+
+    <!-- link to jquerry js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" ></script>
+
+    <!-- link to particles js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js" ></script>
+
+    <!-- add the link to the Animate on Scroll js here -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" ></script>
+
+    <!-- link to custom js -->
+    <script src="script.js"></script>
+
+</head>
+
+<body>
+<!------- CONTENT FOR THE USABILITY TESTING ------->
+    <div id="welcomeOverlay" style="display:none;">
+        <div class="overlayBackdrop"></div>
+        <div class="overlayContent">
+            <h2>Welcome to Exploring the Failure of the American Dream</h2>
+            <p>Hello! Imagine you are from a lower/middle-class immigrant family that just arrived in America after hearing so much about living the ideal life.</p>
+            <p>Please try these tasks/think about during your visit:</p>
+            <ol>
+                <li>Navigation through the website and its different scenes</li>
+                <li>Complete the puzzles (visuals in process)</li>
+                <li>Reflect on how the experience compares to your expectations of the "American Dream"</li>          
+            </ol>
+            <button id="closeOverlayBtn">Let's start</button>
+        </div>
+    </div>
+
+<!------- LANDING PAGE ------->
+    <div id="opening" class="showing">
+        <div class="content">
+            <header>
+                <h1 class="title">American Dream</h1>
+
+                <svg id="headerSVG" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <path id="headerPath" d="M 100,100 m -52.5,0 a 52.5,52.5 0 1,1 105,0 a 52.5,52.5 0 1,1 -105,0" fill="transparent"/>
+                    <text>
+                        <textPath href="#headerPath" startOffset="17%">
+                        The
+                        </textPath>
+                    </text>
+                </svg>
+                <div class="headerBg">
+                    <img src="images/libertyStatue.png" alt="imagery of the statue of liberty" id="headerBGIMG">
+                    <svg width="209" height="194" viewBox="0 0 209 194" fill="none" xmlns="http://www.w3.org/2000/svg" id="headerBGSVG">
+                        <ellipse cx="104.5" cy="97" rx="104.5" ry="97" fill="#D9D9D9"/>
+                    </svg>
+
+                </div>
+            </header>
+
+            <div class="portal">
+                <img class="back" src="images/PortalBack.png" alt=" the portal itself">
+                <img src="images/PortalFront.png" alt="rocks in front of a portal">
+            </div>
+
+            <p class="enterText">click to enter</p>
+        </div>
+        
+        <div id="visualContainer">
+            <svg width="249" height="29" viewBox="0 0 249 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="visuals" d="M2 2L22.4167 27L42.8333 2L63.25 27L83.6667 2L104.083 27L124.5 2L144.917 27L165.333 2L185.75 27L206.167 2L226.583 27L247 2"/>
+            </svg>
+
+            <svg width="249" height="29" viewBox="0 0 249 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="visuals" d="M2 2L22.4167 27L42.8333 2L63.25 27L83.6667 2L104.083 27L124.5 2L144.917 27L165.333 2L185.75 27L206.167 2L226.583 27L247 2"/>
+            </svg>
+
+            <svg width="264" height="279" viewBox="0 0 264 279" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="visuals" d="M261 3 L3 276"/>
+            </svg>
+
+            <svg width="264" height="279" viewBox="0 0 264 279" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="visuals" d="M3 276L261 3.00001"/>
+            </svg>
+        </div>
+    </div>
+
+<!------- SCENE 1: PAST ------->
+    <div id="scene1" class="hidden">
+        <div id="particles-js"></div>
+        <div class="scenes">
+            <header>
+                <h1 class="title2">GREAT DEPRESSION</h1>
+                <div class="yearDisp"><p>1930s</p></div>
+                <p class="enterText">Scroll</p>
+            </header>
+
+            <div style="height: 40vh;"></div>
+            <section class="prePuzzleContent">
+                <div data-aos="fade-up">
+                    <p>The whispers of the American Dream began in the 1930s, where individuals seeked personal fulfillment and self-expression; the rhetoric of the <b>American Identity</b></p>
+                </div>
+
+                <div data-aos="fade-up">
+                    <p>Amid economic instability from the 1929 Stock Market Crash and a shifting political climate with President Roosevelt’s New Deal looking for recovery and reform, people held tightly to hope, refusing to let go of the belief in a better future.</p>
+
+                </div>
+                
+                <div data-aos="fade-up">
+                    <p>There was a shift from pursuing a path of wealth to one of stability to trying to find a way for resilience and recovery.</p>
+                </div>
+
+                <div data-aos="fade-up">
+                    <p>James Truslow Adams coined the phrase “The American Dream” in his 1931 book <i>The Epic of America</i> as an idealization of life in America. But what does this mean to someone of the past?</p>
+                </div>
+
+            </section>
+            
+
+            <section class="puzzleContainer" id="puzzleOld">
+                <div class="puzzleLayout">
+                    <div class="pieceContainer leftPieces"></div>
+                    <div class="boardContainer"></div>
+                    <div class="pieceContainer rightPieces"></div>
+                </div>
+                <div class="puzzleButton">
+                    <button id="finishPuzzle1">Done</button>
+                </div>
+            </section>
+
+            <div id="puzzleInfo1" class="hidden">
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene1 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p> At the heart, it's the collective hope that people can rise above their circumstances. In this vision, the dream is not solely about personal success, but about contributing to the welfare and progress of society as a whole.</p>
+                </div>
+            </div>
+
+            
+            <section class="postPuzzleContent" style="display: none">
+                <p class="enterText" id="anchorText">Scroll</p>
+                <div data-aos="fade-up" class="postPuzzleText">
+                    <p>The social side of the American Dream showed that real progress comes when people work together. It meant changing how we see gender roles, standing up for workers’ rights, and pushing back against racial injustice. These efforts proved that no one rises alone — we grow by lifting each other up.</p>
+                </div>
+                
+                <div data-aos="fade-up" class="postPuzzleText">
+                    <p>It is in this spirit of togetherness that the dream truly took root, reminding us that true greatness is realized not alone, but through the bonds we forge and the communities we built.</p>
+                </div>
+
+                <div style="height: 40vh"></div>
+                <div class="portal">
+                    <img class="back" src="images/PortalBack.png" alt=" the portal itself">
+                    <img src="images/PortalFront.png" alt="rocks in front of a portal">
+                    <p class="enterText">Click to Continue</p>
+                </div>
+                <!-- <div><p>sources: insert here</p></div> -->
+            </section>
+            <div style="height: 20vh"></div>
+
+        </div>
+    </div>
+
+<!------- SCENE 2: PRESENT ------->
+    <div id="scene2" class="hidden">
+        <div class="scenes">
+            <header>
+                <h1 class="title3">THIS IS AMERICA</h1>
+                <div class="yearDisp"><p>202X</p></div>
+            </header>
+
+            <div style="height: 50vh;"></div>
+            <section class="prePuzzleContent">
+                <div data-aos="fade-up">
+                    <p>Transformed from American stability to one of American exceptionalism–a narrative of shared experiences but ambiguous to make it seem it can be applied to all. However, the mental model has shifted from collective growth to one of individual growth, how one can achieve their American Dream. America is a land of possibility and opportunity, allowing for <b>social mobility</b> and determining your own fate through hard work.</p>
+                </div>
+
+                <div data-aos="fade-up">
+                    <p>But the dream comes at a cost, literally.</p>
+                </div>
+
+                <div data-aos="fade-up">
+                    <p>As society places more focus on individual success, people are more likely to feel disconnected and anxious, with shared values and a sense of belonging gradually fading away.</p>
+                </div>
+
+
+                <div data-aos="fade-up">
+                    <p>James Truslow Adams warned of a future where workers blindly follow a capitalist system, convinced it will lead to success, yet unaware of how it often exploits them. Today, that warning rings true.</p>
+                </div>
+
+                <div data-aos="fade-up">
+                    <p></p>
+                </div>
+            </section>
+
+            <section class="puzzleContainer" id="puzzlePresent">
+                <div class="puzzleLayout">
+                    <div class="pieceContainer leftPieces"></div>
+                    <div class="boardContainer"></div>
+                    <div class="pieceContainer rightPieces"></div>
+                </div>
+                <div class="puzzleButton">
+                    <button id="finishPuzzle2">Done</button>
+                </div>
+
+                <div id="visualContentS2">
+                    <svg width="314" height="199" viewBox="0 0 314 199" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M305.774 121.603C284.291 151.172 253.52 172.69 218.375 182.721C183.229 192.753 145.736 190.719 111.882 176.944C78.0274 163.17 49.7646 138.45 31.6062 106.73C13.4477 75.0112 6.44083 38.1224 11.7043 1.95424" stroke="black" stroke-width="19"/>
+                    </svg>
+
+                </div>
+            </section>
+
+            <div id="puzzleInfo2" class="hidden">
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene2 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p> Many continue to chase the promise of upward mobility, believing hard work alone guarantees prosperity. But the system they participate in too often rewards wealth over labor, leaving workers undervalued and undercompensated. The ideal of the self-made millionaire has become the modern version of the American Dream, something marketed as attainable, yet realistically out of reach for most.</p>
+                </div>
+            </div>
+
+            <div id="puzzleInfo3" class="hidden">
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene2 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p>Capitalism has created great wealth, but it’s not shared equally. Those born into privilege have access to better education, networks, and safety nets, making success easier. Meanwhile, low-income people face constant barriers, stuck in a cycle where the rich keep rising and the working class stays in place, no matter how hard they work.</p>
+                    <!-- FIND NUMERICAL FACT TO SUPPORT THIS -->
+                </div>
+            </div>
+
+            <!-- <div style="height: 40vh"></div> -->
+            <section class="postPuzzleContent" style="display: none">
+                <p class="enterText">Scroll</p>
+                <div data-aos="fade-up" class="postPuzzleText">
+                    <p>As inequality grows and it becomes harder to move up in society, real risks start to appear. Many young people, weighed down by debt, high rent, and low pay, feel shut out of stable futures. This frustration leads to distrust, divides communities, and fuels movements that offer quick fixes instead of real solutions. If nothing changes, it won’t just hurt the economy — it could weaken our democracy too.</p>
+                </div>
+                
+                
+                <div class="portal">
+                    <img class="back" src="images/PortalBack.png" alt=" the portal itself">
+                    <img src="images/PortalFront.png" alt="rocks in front of a portal">
+                </div>
+                <div style="height: 40vh"></div>
+            </section>
+            <div style="height: 20vh"></div>
+        </div>
+        
+    </div>
+
+<!------- SCENE 3: FUTURE -------> 
+    <div id="scene3" class="hidden">
+        <div class="scenes">
+            <header>
+                <h1 class="title4">???</h1>
+                <div class="yearDisp"><p id="randNum">XXXX</p></div>
+            </header>
+
+            <div style="height: 50vh;"></div>
+            <section class="prePuzzleContent">
+                <div data-aos="fade-up">
+                    <p>Picture a future where your hard work truly matters, where no matter where you come from, your effort is respected and rewarded. Imagine a country where everyone has enough to eat, where jobs are not just dreams but real chances to build a better life, and where nobody is left struggling alone. This is not just a hope, it is a vision of a fair America where your voice counts, your family thrives, and your sacrifices are seen and honored. Together, we can build that future.</p>
+                </div>
+
+                <div data-aos="fade-up">
+                    <p>In this future America, fairer redistribution and financial reform create stability and support lasting growth. This new system ensures opportunity and shared prosperity for everyone, building a stronger, more secure nation.</p>
+                </div>
+            </section>
+            
+
+            
+            <section class="puzzleContainer" id="puzzleFuture">
+                <div class="puzzleLayout">
+                    <div class="pieceContainer leftPieces"></div>
+                    <div class="boardContainer"></div>
+                    <div class="pieceContainer rightPieces"></div>
+                </div>
+                <div class="puzzleButton">
+                    <button id="finishPuzzle3">Done</button>
+                </div>
+            </section>
+
+            <div id="puzzleInfo4" class="hidden">
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene3 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p>placeholder info box 3</p>
+                </div>
+            </div>
+
+            <div id="puzzleInfo5" class="hidden">
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene3 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p>placeholder info box 4</p>
+                </div>
+            </div>
+
+            <div id="puzzleInfo6" class="hidden">
+                <div class="overlayBackdrop"></div>
+                <div class="overlayScene3 overlayContent">
+                    <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+
+                    <p>placeholder info box 5</p>
+                </div>
+            </div>
+
+            <div style="height: 40vh"></div>
+            <section class="postPuzzleContent" style="display: none">
+                <p class="enterText">Scroll</p>
+                <div data-aos="fade-up" class="postPuzzleText">
+                    <p>maybe have something here for more information/webpage reset</p>
+
+
+                </div>
+
+
+                <div style="height: 40vh"></div>
+            </section>
+            <div style="height: 20vh"></div>
+
+        </div>
+        
+    </div>
+
+</body>
+</html>

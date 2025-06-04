@@ -1,0 +1,506 @@
+#welcomeOverlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.overlayBackdrop {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+.overlayContent {
+    /* position: relative; */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    background: white;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    max-width: 400px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    text-align: center;
+    font-family: Arial, sans-serif;
+    z-index: 10;
+}
+.overlayContent h2 {
+    margin-bottom: 1rem;
+    font-family: "Roboto", sans-serif;
+    color: #333;
+}
+.overlayContent p {
+    margin: 0.5rem 0 1rem;
+    color: #555;
+}
+.overlayContent ol {
+    text-align: left;
+    margin: 1rem 0 1.5rem 1.5rem;
+    color: #444;
+    font-family: "Space Mono", monospace;
+}
+#closeOverlayBtn {
+    background-color: #0078d7;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+}
+#closeOverlayBtn:hover {
+    background-color: #005fa3;
+}
+
+.closeOverlay {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+}
+
+.closeOverlay:hover {
+    color: #000;
+}
+
+
+body {
+    background: #201F1F;
+    overflow-x: hidden;
+}
+
+
+/***** GENERAL CONTENT *****/
+
+.content {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    flex-direction: column;
+}
+
+.showing {
+    visibility: visible;
+    /* opacity: 1; */
+    display: block;
+}
+
+.hidden {
+    visibility: hidden;
+    display: none;
+    /* opacity: 0; */
+}
+
+/***** TYPOGRAPHY STYLING *****/
+h1 {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-size: 4.5em;
+    color:rgb(255, 255, 255);
+}
+
+h1.title2, h1.title3, h1.title4 {
+    font-size: 8em;
+}
+
+text {
+    font-family: "Roboto", sans-serif;
+}
+
+p {
+    font-family: "Space Mono", monospace;
+    color:rgb(255, 255, 255);
+    font-size: larger;
+}
+
+/***** PORTAL CONTENT *****/
+.portal {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    cursor: pointer
+}
+
+.portal img {
+    position: absolute;
+    width: 80vw;
+    max-width: 400px;
+    width: 450px;
+    height: auto;
+    bottom: 0%;
+}
+
+.portal .back {
+    animation: rotatePortal 4s linear infinite;
+    z-index: 0;
+}
+
+@keyframes rotatePortal {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.portal .front {
+    z-index: 1;
+}
+
+/***** OPENING SCREEN *****/
+.content header {
+    position: relative;
+}
+
+#opening .content header::before {
+    content: "";
+    position: absolute;
+    top: -134px;
+    left: -190px;
+    width: 930px;
+    height: 473px;
+    background-image: url(images/openingHeaderBG.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -2;
+}
+
+h1.title {
+    z-index: 1;
+    margin: .67em 0 0 0;
+}
+
+#headerSVG {
+    position: absolute;
+    top: 0;
+    left: -79px;
+}
+
+#headerSVG text {
+    fill: rgb(255, 255, 255);
+    letter-spacing: -2px;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.headerBg img {
+    position: absolute;
+    top: -334px;
+    right: -53px;
+    z-index: -1;
+    transform-origin: bottom;
+}
+
+.headerBg svg {
+    position: absolute;
+    top: -384px;
+    right: 49px;
+    z-index: -2;
+}
+
+#visualContainer {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#visualContainer svg {
+    position: absolute;
+}
+
+#visualContainer svg:nth-child(1) {
+    top: 6%;
+    left: -1%;
+}
+
+#visualContainer svg:nth-child(2) {
+    top: 14%;
+    left: 8%;
+}
+
+#visualContainer svg:nth-child(3) {
+    bottom: 5%;
+    left: 80%;
+}
+
+#visualContainer svg:nth-child(4) {
+    bottom: -12%;
+    left: 77%;
+}
+
+.visuals {
+    stroke: rgb(255, 255, 255);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.enterText {
+    position: absolute;
+    display: inline-block;
+    bottom: 0px;
+    color: #6E6E6E;
+}
+
+.enterText::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 8px solid #6E6E6E;
+    animation: UpDownMove 1s linear infinite;
+}
+
+@keyframes UpDownMove {
+    0%, 100% {
+        transform: translateY(-50%) translateX(-50%);
+    }
+    50% {
+        transform: translateY(0%) translateX(-50%);
+    }
+}
+
+/***** SCENES: General Styling *****/
+.scenes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-direction: column;
+}
+
+.scenes header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.scenes::before {
+    content: '';
+    display: block;
+    height: 30vh;
+}
+
+.scenes div.portal {
+    height: 50%;
+}
+
+.yearDisp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.yearDisp p {
+    background-color: #000000b0;
+    font-size: 2em;
+    padding: 4px 49px;
+    color: white;
+    letter-spacing: 14px;
+}
+
+.prePuzzleContent, .postPuzzleContent {
+    padding: 1% 10%;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* TEST FOR SHI CAUSE I CANT THINK*/
+.puzzleContainer {
+    width: 95vw;
+    margin: 5px auto;
+    padding: 5px;
+    position: relative;
+    align-items: center;
+}
+
+.puzzleLayout {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.pieceContainer {
+    width: 300px;
+    height: 460px;
+    position: relative;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    overflow: visible;
+}
+
+.boardContainer {
+    width: 90vw;
+    aspect-ratio: 1 / 1;
+    display: grid;
+    max-width: 600px;
+    gap: 2px;
+    padding: 5px;
+    background-color: #AFAFB8;
+    box-sizing: border-box;
+}
+
+.piece, .droppableSpace {
+    width: 100%;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    cursor: move;
+}
+
+.droppableSpace {
+    border-style: dashed;
+}
+
+.ui-state-highlight {
+    background-color: #8ca18c;
+}
+
+.puzzleButton {
+    display: flex;
+    justify-content: center;
+}
+
+.piece {
+    width: 100%;
+    position: absolute;
+    overflow: visible;
+}
+
+.piece-wrapper, .piece-wrapper img {
+    width: 100%;
+
+}
+
+.puzzleButton button {
+    background-color: #5b5c7c;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 20px auto;
+    display: block;
+}
+
+.puzzleButton button:hover {
+    background-color: #595aa0;
+    transform: translateY(-2px);
+}
+
+
+/***** SCENES 1 *****/
+#scene1 {
+    /* background-image: url(images/puzzle1/scene1BG.png); */
+    background-attachment: fixed;
+}
+
+#scene1 .boardContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+}
+
+#scene1 .enterText {
+    position: relative;
+    text-align: center;
+    margin: 0;
+}
+
+#scene1 .enterText::before {
+    transform: translateX(-50%) rotate(180deg);
+    animation: UpDownMoveScroll 1s linear infinite;
+}
+
+@keyframes UpDownMoveScroll {
+    0%, 100% {
+        transform: translateY(-50%) translateX(-50%) rotate(180deg);
+    }
+    50% {
+        transform: translateY(0%) translateX(-50%) rotate(180deg);
+    }
+}
+
+/***** SCENES 2 *****/
+#scene2, #scene2 .yearDisp p {
+    background: ghostwhite;
+}
+
+#scene2 h1, #scene2 p {
+    color: #201F1F;
+}
+
+#scene2 .boardContainer {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background: none;
+    width: 22vw;
+    justify-items: center;
+    gap: 2px;
+    justify-content: center;
+}
+
+
+
+#scene2 .puzzleContainer {
+    background-image: url("images/presentMemPhone.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#scene2 .droppableSpace {
+    width: 100px;
+    height: 100px;
+}
+
+#scene2 .piece-wrapper, #scene2 .piece-wrapper img {
+    width: 100px;
+}
+
+
+
+/***** SCENES 3 *****/
+#scene3 .boardContainer {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
