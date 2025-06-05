@@ -452,7 +452,7 @@ h1.title {
 }
 
 /***** SCENES 2 *****/
-#scene2, #scene2 .yearDisp p {
+#scene2 .scenes, #scene2 .yearDisp p {
     background: ghostwhite;
 }
 
@@ -465,12 +465,11 @@ h1.title {
     grid-template-rows: repeat(3, 1fr);
     background: none;
     width: 22vw;
+    max-width: 320px;
     justify-items: center;
     gap: 2px;
     justify-content: center;
 }
-
-
 
 #scene2 .puzzleContainer {
     background-image: url("images/presentMemPhone.png");
@@ -488,10 +487,28 @@ h1.title {
     width: 100px;
 }
 
+#scene2 #svgContainer {
+    position: fixed;         /* FIXED to viewport */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    z-index: -1;  
+    pointer-events: none; 
+}
+
+#scene2 .floating-svg {
+    position: absolute;
+}
 
 
 /***** SCENES 3 *****/
 #scene3 .boardContainer {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+}
+
+#scene3 .piece-wrapper, #scene3 .piece-wrapper img {
+    width: 100px;
 }

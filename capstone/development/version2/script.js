@@ -115,7 +115,7 @@
         }
 
 
-////////// SCENE 2: Title Animation
+////////// SCENE 2: Animations
         function animateScene2() {
             ///// Title Animation
             let split = SplitText.create(".title3", {
@@ -130,7 +130,12 @@
                 stagger: 0.25
             });
             console.log("animation 2 is playing now");
+
+            ///// SVG animations
+
+                
         }
+        
 
 ////////// SCENE 3: Title Animation
         function animateScene3() {
@@ -205,7 +210,7 @@
                     wrapper.appendChild(img);
                     piece.appendChild(wrapper);
 
-                    piece.style.position = "absolute";
+                    // piece.style.position = "absolute";
                     piece.style.top = Math.random() * 300 + "px";
                     piece.style.left = Math.random() * 50 + "px";
 
