@@ -12,17 +12,6 @@
         const scene3 = document.querySelector('#scene3');
         let sceneCounter = 0;
 
-        window.addEventListener('load', () => {
-            const overlay = document.getElementById('welcomeOverlay');
-            const closeBtn = document.getElementById('closeOverlayBtn');
-
-            overlay.style.display = 'flex';
-
-            closeBtn.addEventListener('click', () => {
-                overlay.style.display = 'none';
-            });
-        });
-
         window.addEventListener('scroll', () => {
             const scrollY = window.scrollY;
             const yOffset = scrollY * 0.45;
