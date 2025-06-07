@@ -64,8 +64,7 @@
 
         portal.forEach(portal => {
             portal.addEventListener('click', switchScenes);
-        });
-        
+        });   
         
         if (scene0.classList.contains('showing')) {
             animateScene0();
@@ -132,8 +131,13 @@
             console.log("animation 2 is playing now");
 
             ///// SVG animations
-
-                
+            gsap.from(".pop-svg", {
+                scale: 0,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.2,
+                ease: "back.out(1.7)"
+            });
         }
         
 

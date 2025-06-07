@@ -2,15 +2,13 @@
     position: absolute;
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
 }
 
 .overlayContent {
-    /* position: relative; */
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 50%; left: 50%;
     transform: translate(-50%, -50%);
-
     background: white;
     padding: 2rem 2.5rem;
     border-radius: 12px;
@@ -20,11 +18,13 @@
     font-family: Arial, sans-serif;
     z-index: 10;
 }
+
 .overlayContent h2 {
     margin-bottom: 1rem;
     font-family: "Roboto", sans-serif;
     color: #333;
 }
+
 .overlayContent p {
     margin: 0.5rem 0 1rem;
     color: #555;
@@ -35,6 +35,7 @@
     color: #444;
     font-family: "Space Mono", monospace;
 }
+
 #closeOverlayBtn {
     background-color: #0078d7;
     color: white;
@@ -284,6 +285,7 @@ h1.title {
     position: relative;
     display: flex;
     flex-direction: column;
+    z-index: 5;
 }
 
 .scenes::before {
@@ -327,6 +329,7 @@ h1.title {
     display: flex;
     flex-direction: column;
     gap: 28px;
+    z-index: 5;
 }
 
 .puzzleContainer {
@@ -335,6 +338,7 @@ h1.title {
     padding: 5px;
     position: relative;
     align-items: center;
+    z-index: 5;
 }
 
 .puzzleLayout {
@@ -512,9 +516,62 @@ h1.title {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    z-index: -1;  
+    z-index: 3;  
     pointer-events: none; 
 }
+
+#scene2 #svgContainer div {
+    position: relative;
+}
+
+#scene2 #svgContainer svg{
+    position: absolute;
+}
+
+#scene2 #svgBG1 {
+    right: 0vw;
+    top: 54vh;
+}
+
+#scene2 #svgBG2 {
+    right: -67vw;
+}
+
+#scene2 #svgPattern1 {
+    right: -17vw;
+    top: 66vh;
+}
+
+#scene2 #svgPattern2 {
+    right: -86vw;
+}
+
+#scene2 #svgYellow {
+    right: -18vw;
+    top: -7vh;
+}
+
+#scene2 #svgYellow #svgYellowOutline{
+    left: -21px;
+    top: 8px;
+}
+
+
+#scene2 #svgRed {
+    top: 70vh;
+    left: -5vw;
+}
+
+#scene2 #svgBlue {
+    right: -91vw;
+    top: 65vh;
+}
+
+#scene2 #svgBlue #svgBlueOutline{
+    left: -21px;
+    top: 8px;
+}
+
 
 #scene2 .floating-svg {
     position: absolute;
