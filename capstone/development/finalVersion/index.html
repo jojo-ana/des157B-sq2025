@@ -28,12 +28,25 @@
     <!-- add the link to the Animate on Scroll js here -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
+    <!-- add the link to the THREE js here -->
+    <script type="importmap" defer>
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@v0.177.0/build/three.module.js",
+                "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.177.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script type="module" src="main.js" defer></script>
+
     <!-- link to custom js -->
     <script src="script.js" defer></script>
 
 </head>
 
 <body>
+<!-- TEMPORARILY 'hidden' ON OPENING AND 'showing' ON SCENE 3 -->
+
 
 <!------- LANDING PAGE ------->
     <div id="opening" class="showing">
@@ -251,15 +264,21 @@
 
 <!------- SCENE 3: FUTURE -------> 
     <div id="scene3" class="hidden">
-        <div class="scenes">
-            <header>
-                <h1 class="title4">What's Next</h1>
-                <div class="yearDisp"><p id="randNum">XXXX</p></div>
-                <p class="enterText">Scroll</p>
-            </header>
+        <div id="wrapper3D">
+            <canvas id="canvas3D"></canvas>
+        </div>
 
+        <div class="scenes">
+            <section id="headerFuture">
+                <header>
+                    <h1 class="title4">What's Next</h1>
+                    <div class="yearDisp"><p id="randNum">XXXX</p></div>
+                    <p class="enterText">Scroll</p>
+                </header>
+            </section>
+            
             <div style="height: 50vh;"></div>
-            <section class="prePuzzleContent">
+            <section class="prePuzzleContent" id="prePuzzleFuture">
                 <div data-aos="fade-up">
                     <p>The earliest versions of the American Dream weren't promises of wealth but rather calls to action, urging a society grounded in justice, equality, and shared responsibility.</p>
                 </div>
@@ -270,9 +289,7 @@
 
                 
             </section>
-            
-
-            
+                      
             <section class="puzzleContainer" id="puzzleFuture">
                 <div class="puzzleLayout">
                     <div class="pieceContainer leftPieces"></div>
@@ -311,7 +328,7 @@
                 </div>
             </div>
 
-            <section class="postPuzzleContent" style="display: none">
+            <section class="postPuzzleContent" style="display: none" id="postPuzzleFuture">
                 <p class="enterText">Scroll</p>
                 <div data-aos="fade-up" class="postPuzzleText">
                     <p>Obsession over wealth or status fragments society. A future that continues down that path risks deepening instability would build a world where everyone can thrive.</p>
