@@ -259,12 +259,16 @@
                     fullImage.style.objectFit = "contain";
 
                     boardContainer.appendChild(fullImage);
-                    gsap.from(fullImage, {
-                        opacity: 0,
-                        scale: 0.9,
-                        duration: 1,
-                        ease: "power2.out"
+
+                    fullImage.addEventListener("load", () => {
+                            gsap.from(fullImage, {
+                            opacity: 0,
+                            scale: 0.9,
+                            duration: 1,
+                            ease: "power2.out"
+                        });
                     });
+                    
                 }
             } 
 
