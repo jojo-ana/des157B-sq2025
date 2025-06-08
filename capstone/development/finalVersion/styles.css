@@ -1,79 +1,9 @@
-.overlayBackdrop {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 10;
-}
-
-.overlayContent {
-    position: fixed;
-    top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    background: white;
-    padding: 2rem 2.5rem;
-    border-radius: 12px;
-    max-width: 400px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    text-align: center;
-    font-family: Arial, sans-serif;
-    z-index: 10;
-}
-
-.overlayContent h2 {
-    margin-bottom: 1rem;
-    font-family: "Roboto", sans-serif;
-    color: #333;
-}
-
-.overlayContent p {
-    margin: 0.5rem 0 1rem;
-    color: #555;
-}
-.overlayContent ol {
-    text-align: left;
-    margin: 1rem 0 1.5rem 1.5rem;
-    color: #444;
-    font-family: "Space Mono", monospace;
-}
-
-#closeOverlayBtn {
-    background-color: #0078d7;
-    color: white;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    font-size: 1rem;
-    border-radius: 6px;
-    cursor: pointer;
-}
-#closeOverlayBtn:hover {
-    background-color: #005fa3;
-}
-
-.closeOverlay {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.75rem;
-    background: transparent;
-    border: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-    cursor: pointer;
-}
-
-.closeOverlay:hover {
-    color: #000;
-}
-
-
 body {
     background: #201F1F;
     overflow-x: hidden;
 }
 
-
 /***** GENERAL CONTENT *****/
-
 .content {
     height: 100vh;
     width: 100vw;
@@ -84,17 +14,9 @@ body {
     flex-direction: column;
 }
 
-.showing {
-    visibility: visible;
-    /* opacity: 1; */
-    display: block;
-}
+.showing { visibility: visible; display: block; }
 
-.hidden {
-    visibility: hidden;
-    display: none;
-    /* opacity: 0; */
-}
+.hidden { visibility: hidden; display: none;}
 
 /***** TYPOGRAPHY STYLING *****/
 h1 {
@@ -104,15 +26,11 @@ h1 {
     color:rgb(255, 255, 255);
 }
 
-h1.title2, h1.title3, h1.title4 {
-    font-size: 8em;
-}
+h1.title2, h1.title3, h1.title4 { font-size: 8em; }
 
-text {
-    font-family: "Roboto", sans-serif;
-}
+text { font-family: "Roboto", sans-serif; }
 
-p {
+p { 
     font-family: "Space Mono", monospace;
     color:rgb(255, 255, 255);
     font-size: larger;
@@ -142,22 +60,14 @@ p {
 }
 
 @keyframes rotatePortal {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
-.portal .front {
-    z-index: 1;
-}
+.portal .front { z-index: 1; }
 
 /***** OPENING SCREEN *****/
-.content header {
-    position: relative;
-}
+.content header { position: relative; }
 
 #opening .content header::before {
     content: "";
@@ -172,16 +82,9 @@ p {
     z-index: -2;
 }
 
-h1.title {
-    z-index: 1;
-    margin: .67em 0 0 0;
-}
+h1.title { z-index: 1; margin: .67em 0 0 0; }
 
-#headerSVG {
-    position: absolute;
-    top: 0;
-    left: -79px;
-}
+#headerSVG { position: absolute; top: 0; left: -79px; }
 
 #headerSVG text {
     fill: rgb(255, 255, 255);
@@ -213,29 +116,15 @@ h1.title {
     pointer-events: none;
 }
 
-#visualContainer svg {
-    position: absolute;
-}
+#visualContainer svg { position: absolute; }
 
-#visualContainer svg:nth-child(1) {
-    top: 6%;
-    left: -1%;
-}
+#visualContainer svg:nth-child(1) { top: 6%; left: -1%; }
 
-#visualContainer svg:nth-child(2) {
-    top: 14%;
-    left: 8%;
-}
+#visualContainer svg:nth-child(2) { top: 14%; left: 8%; }
 
-#visualContainer svg:nth-child(3) {
-    bottom: 5%;
-    left: 80%;
-}
+#visualContainer svg:nth-child(3) { bottom: 5%; left: 80%; }
 
-#visualContainer svg:nth-child(4) {
-    bottom: -12%;
-    left: 77%;
-}
+#visualContainer svg:nth-child(4) { bottom: -12%; left: 77%; }
 
 .visuals {
     stroke: rgb(255, 255, 255);
@@ -264,12 +153,8 @@ h1.title {
 }
 
 @keyframes UpDownMove {
-    0%, 100% {
-        transform: translateY(-50%) translateX(-50%);
-    }
-    50% {
-        transform: translateY(0%) translateX(-50%);
-    }
+    0%, 100% { transform: translateY(-50%) translateX(-50%); }
+    50% { transform: translateY(0%) translateX(-50%); }
 }
 
 /***** SCENES: General Styling *****/
@@ -288,26 +173,16 @@ h1.title {
     z-index: 5;
 }
 
-.scenes::before {
-    content: '';
-    display: block;
-    height: 30vh;
-}
+.scenes::before { content: ''; display: block; height: 30vh; }
 
-.scenes .enterText {
-    position: relative;
-    text-align: center;
-    margin: 0;
-}
+.scenes .enterText { position: relative; text-align: center; margin: 0; }
 
 .scenes .enterText::before {
     transform: translateX(-50%) rotate(180deg);
     animation: UpDownMoveScroll 1s linear infinite;
 }
 
-.scenes div.portal {
-    height: 50%;
-}
+.scenes div.portal { height: 50%; }
 
 .yearDisp {
     position: absolute;
@@ -353,8 +228,6 @@ h1.title {
     width: 300px;
     height: 460px;
     position: relative;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
     overflow: visible;
 }
 
@@ -365,7 +238,6 @@ h1.title {
     max-width: 600px;
     gap: 2px;
     padding: 5px;
-    background-color: #AFAFB8;
     box-sizing: border-box;
 }
 
@@ -381,56 +253,63 @@ h1.title {
     cursor: move;
 }
 
-.droppableSpace {
-    border-style: dashed;
-}
+.droppableSpace { background-color: #a5a5a57c; border-radius: 10px;}
 
-.ui-state-highlight {
-    background-color: #8ca18c;
-}
+.ui-state-highlight { background-color: #c5e9e4; }
 
-.puzzleButton {
-    display: flex;
-    justify-content: center;
-}
+.piece { width: 100%; position: absolute; overflow: visible; }
 
-.piece {
-    width: 100%;
-    position: absolute;
-    overflow: visible;
-}
-
-.piece-wrapper, .piece-wrapper img {
-    width: 100%;
-
-}
+.piece-wrapper, .piece-wrapper img { width: 100%; }
 
 .puzzleButton button {
-    background-color: #5b5c7c;
     color: white;
     border: none;
     padding: 12px 24px;
     font-size: 20px;
     font-weight: bold;
-    border-radius: 8px;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin: 20px auto;
     display: block;
 }
 
-.puzzleButton button:hover {
-    background-color: #595aa0;
-    transform: translateY(-2px);
+.puzzleButton button:hover { transform: translateY(-2px); }
+
+.overlayBackdrop {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 10;
 }
 
+.overlayContent {
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    max-width: 400px;
+    z-index: 10;
+}
+
+.overlayContent p { margin: 0.5rem 1rem; color: #f5f5f5; }
+
+.closeOverlay {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.75rem;
+    background: transparent;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #d6d2d2;
+    cursor: pointer;
+}
+
+.closeOverlay:hover { color: #000; }
 
 /***** SCENES 1 *****/
-#scene1 {
-    /* background-image: url(images/puzzle1/scene1BG.png); */
-    background-attachment: fixed;
-}
 
 #scene1 .boardContainer {
     grid-template-columns: repeat(2, 1fr);
@@ -447,22 +326,62 @@ h1.title {
 }
 
 @keyframes UpDownMoveScroll {
-    0%, 100% {
-        transform: translateY(-50%) translateX(-50%) rotate(180deg);
-    }
-    50% {
-        transform: translateY(0%) translateX(-50%) rotate(180deg);
-    }
+    0%, 100% { transform: translateY(-50%) translateX(-50%) rotate(180deg); }
+    50% { transform: translateY(0%) translateX(-50%) rotate(180deg); }
+}
+
+.overlayScene1 {
+    background: linear-gradient(to bottom, #2b2b2b, #1c1c1c);
+    border: 4px double #fdf6e3;
+    box-shadow: 
+        0 0 0 2px #000 inset,
+        0 0 12px rgba(0, 0, 0, 0.5),
+        8px 8px 0 #000;
+    width: 80%;
+    z-index: 1000;
+}
+
+#finishPuzzle1 {
+    font-size: 1.5rem;
+    background: linear-gradient(to bottom, #333333, #1c1c1c);
+    border: 2px double #949494;
+    cursor: pointer;
+}
+
+.deco-button:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: inset 0 0 0 2px #000, 6px 6px 0 #000;
 }
 
 /***** SCENES 2 *****/
-#scene2 .scenes, #scene2 .yearDisp p {
-    background: ghostwhite;
+#scene2 .scenes { background: #ececf5; }
+
+#scene2 .yearDisp p { background: ghostwhite; }
+
+#scene2 h1, #scene2 p { color: #201F1F; }
+
+#scene2 .prePuzzleContent p, #scene2 .postPuzzleContent p, #scene2 .overlayContent p { 
+    font-family: "Inter", sans-serif; 
+    line-height: 30px;
+    color: #6d6d6d;
+}
+ #scene2 .prePuzzleContent div, #scene2 .postPuzzleContent .postPuzzleText, #scene2 .overlayContent {
+    background: white;
+    border-radius: 10px;
+    padding: 10px 4%;
+    margin: 10px 10%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+ }
+
+#scene2 .overlayContent {
+    margin: 0;
 }
 
-#scene2 h1, #scene2 p {
-    color: #201F1F;
+#scene2 .overlayContent p {
+    padding: 10px;
 }
+
+
 
 #scene2 .boardContainer {
     grid-template-columns: repeat(3, 1fr);
@@ -483,11 +402,7 @@ h1.title {
     background-size: contain;
 }
 
-#scene2 .puzzleLayout {
-    padding-top: 80px;
-    gap: 80px;
-    align-items: flex-start;
-}
+#scene2 .puzzleLayout { padding-top: 80px; gap: 80px; align-items: flex-start; }
 
 #scene2 .droppableSpace {
     width: 100px;
@@ -497,17 +412,9 @@ h1.title {
     border: none;
 }
 
-#scene2 .ui-state-highlight {
-    background-color: rgb(197, 233, 228);
-}
+#scene2 .pieceContainer { border-radius: 20px; }
 
-#scene2 .pieceContainer {
-    border-radius: 20px;
-}
-
-#scene2 .piece-wrapper, #scene2 .piece-wrapper img {
-    width: 125px;
-}
+#scene2 .piece-wrapper, #scene2 .piece-wrapper img { width: 125px; }
 
 #scene2 #svgContainer {
     position: fixed; 
@@ -520,62 +427,18 @@ h1.title {
     pointer-events: none; 
 }
 
-#scene2 #svgContainer div {
-    position: relative;
-}
+#scene2 #svgContainer div { position: relative; }
+#scene2 #svgContainer svg{ position: absolute; }
 
-#scene2 #svgContainer svg{
-    position: absolute;
-}
-
-#scene2 #svgBG1 {
-    right: 0vw;
-    top: 54vh;
-}
-
-#scene2 #svgBG2 {
-    right: -67vw;
-}
-
-#scene2 #svgPattern1 {
-    right: -17vw;
-    top: 66vh;
-}
-
-#scene2 #svgPattern2 {
-    right: -86vw;
-}
-
-#scene2 #svgYellow {
-    right: -18vw;
-    top: -7vh;
-}
-
-#scene2 #svgYellow #svgYellowOutline{
-    left: -21px;
-    top: 8px;
-}
-
-
-#scene2 #svgRed {
-    top: 70vh;
-    left: -5vw;
-}
-
-#scene2 #svgBlue {
-    right: -91vw;
-    top: 65vh;
-}
-
-#scene2 #svgBlue #svgBlueOutline{
-    left: -21px;
-    top: 8px;
-}
-
-
-#scene2 .floating-svg {
-    position: absolute;
-}
+#scene2 #svgBG1 { right: 0vw; top: 54vh; }
+#scene2 #svgBG2 { right: -67vw; }
+#scene2 #svgPattern1 { right: -17vw; top: 66vh; }
+#scene2 #svgPattern2 { right: -86vw; }
+#scene2 #svgYellow { right: -18vw; top: -7vh; }
+#scene2 #svgYellow #svgYellowOutline{ left: -21px; top: 8px; }
+#scene2 #svgRed { top: 70vh; left: -5vw; }
+#scene2 #svgBlue { right: -91vw; top: 65vh;}
+#scene2 #svgBlue #svgBlueOutline{ left: -21px; top: 8px; }
 
 #scene2 #finishPuzzle2 {
     font-family: 'Inter', sans-serif;
@@ -587,30 +450,119 @@ h1.title {
     z-index: 2;
 }
 
-#scene2 #finishPuzzle2:hover {
-    background-color: #4870e9;
-} 
-
-
+#scene2 #finishPuzzle2:hover { background-color: #4870e9; } 
 
 /***** SCENES 3 *****/
+#scene3 .puzzleLayout {
+    background: url("images/futurePuzzleBG.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 770px;
+    gap: 2px;
+}
+
+#scene3 #prePuzzleFuture div, #scene3 #postPuzzleFuture div {
+    background: url("images/futureTextBG.png");
+    background-size: auto 100% ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#scene3 #prePuzzleFuture p, #scene3 #postPuzzleFuture div p {
+  font-family: "Oxanium", sans-serif;
+  line-height: 55px;
+  padding: 10%;
+}
+
+.overlayScene3 p {
+    font-family: "Oxanium", sans-serif;
+    line-height: 25px;
+}
+
+.overlayScene3 {
+    background: rgba(0, 10, 15, 0.85); /* dark sci-fi tint */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+#scene3 .closeOverlay:hover { color:#00ffff; }
+
 #scene3 .boardContainer {
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
+    background: none;
+    padding: 70px;
 }
 
-#scene3 .piece-wrapper, #scene3 .piece-wrapper img {
-    width: 100px;
+#scene3 .pieceContainer {
+    background: none;
+    border: none;
 }
 
-#scene3 #wrapper3D {
-    position: fixed;
-    inset: 0;
+#scene3 .piece-wrapper, #scene3 .piece-wrapper img { width: 100px; }
+
+#scene3 #wrapper3D { position: fixed; inset: 0; }
+
+#scene3 #canvas3D { top: 0; left: 0; width: 100vw; height: 100vh; }
+
+
+
+@keyframes screenTurnOn {
+  0% {
+    opacity: 0;
+    transform: perspective(800px) rotateX(-90deg) scale(0.7);
+    filter: brightness(0.4) blur(4px);
+  }
+  60% {
+    opacity: 1;
+    transform: perspective(800px) rotateX(10deg) scale(1.05);
+    filter: brightness(1.2) blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: perspective(800px) rotateX(0deg) scale(1);
+    filter: brightness(1) blur(0);
+  }
 }
 
-#scene3 #canvas3D {
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
+[data-aos="screen-on"] {
+  opacity: 0;
+  transform: perspective(800px) rotateX(-90deg) scale(0.7);
+  transform-origin: center center;
+  transition: none;
 }
+
+[data-aos="screen-on"].aos-animate {
+  animation: screenTurnOn 1s ease-out forwards;
+}
+
+#finishPuzzle3 {
+    font-family: "Oxanium", sans-serif;
+    color: #fafafa;
+    background: #0e0e0e;
+    border: 2px solid #00ffff;
+    padding: 0.75rem 2.5rem;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow:
+        0 0 10px #00ffff,
+        0 0 20px rgba(0, 255, 255, 0.4),
+        inset 0 0 8px rgba(0, 255, 255, 0.2);
+}
+
+#finishPuzzle3:hover {
+  background: #00ffff;
+  color: #0e0e0e;
+  box-shadow:
+    0 0 12px #00ffff,
+    0 0 30px #00ffff,
+    inset 0 0 10px #0e0e0e;
+}
+

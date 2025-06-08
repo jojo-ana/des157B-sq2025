@@ -160,14 +160,6 @@
 
 
 ////////// Puzzle Code
-/*
-  Multi-Scene Puzzle Game Logic: Drag-and-drop puzzle for each scene (#scene1, #scene2, #scene3); allows for iteration (and because I don't want my code to be 300 lines long from this alone)
-    - Randomly distributes shuffled puzzle pieces into two side containers
-    - Generate a grid of droppable slots (boardContainer) 
-    - jQuery UI to enable drag-and-drop interactions: `draggable` & `droppable`
-    - On clicking the "Done" button, the script checks if all slots are filled correctly
-*/
-
         $(document).ready(function () {
             // Scene Object
             const scenes = [
@@ -215,8 +207,8 @@
                     piece.appendChild(wrapper);
 
                     // piece.style.position = "absolute";
-                    piece.style.top = Math.random() * 300 + "px";
-                    piece.style.left = Math.random() * 50 + "px";
+                    piece.style.top = Math.random() * 400 + "px";
+                    piece.style.left = Math.random() * 100 + "px";
 
                     const targetContainer = index < midPoint ? pieceContainers[0] : pieceContainers[1];
                     targetContainer.style.position = "relative";

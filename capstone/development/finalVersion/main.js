@@ -63,13 +63,13 @@ gsap.registerPlugin(SplitText, DrawSVGPlugin);
         let deskPositionModel = [
             {
                 id: 'headerFuture',
-                position: {y: -15, z: -3},
+                position: {y: -17, z: -10},
                 rotation: {x: 0.5}
             }, 
             {
                 id: 'puzzleFuture',
-                position: {y: -5, z: 4},
-                rotation: {x: 1}
+                position: {y: -2, z: 4},
+                rotation: {x: 0.65}
             },
             {
                 id: 'postPuzzleFuture',
@@ -100,6 +100,9 @@ gsap.registerPlugin(SplitText, DrawSVGPlugin);
                         z: new_coordinates.position.z,
                         duration: 1,
                         ease: "power1.out"
+                    })
+                    gsap.to(deskModel.rotation, {
+                        x: new_coordinates.rotation.x
                     })
 
                 }
