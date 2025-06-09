@@ -308,6 +308,10 @@
                         revealCompletedPuzzle(sceneId, boardContainer, postContent);
                         AOS.refresh();
 
+                        if (finishButton) {
+                            finishButton.remove();
+                        }
+
                         document.querySelectorAll('[id^="puzzleInfo"]:not(.hidden)').forEach(box => {
                             const overlay = box.querySelector(".overlayContent");
                             if (overlay) {
@@ -350,6 +354,13 @@
                             const target = scene.querySelector(`.droppableSpace[data-location="${loc}"]`);
                             if (piece && target) target.appendChild(piece);
                         });
+
+                        scene.querySelectorAll(".droppableSpace").forEach(slot => {
+                            slot.style.border = "";
+                            slot.style.backgroundColor = "";
+                        });
+
+                        // finishButton.removeEventListener('click', onClickHandler);
                     } else {
                         boardContainer.innerHTML = "";
                         boardContainer.style.display = "block";
