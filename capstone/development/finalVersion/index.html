@@ -45,6 +45,9 @@
 </head>
 
 <body>
+<div id="blinkTop" class="blink blink-top"></div>
+<div id="blinkBottom" class="blink blink-bottom"></div>
+
 
 <!------- LANDING PAGE ------->
     <div id="opening" class="showing">
@@ -68,6 +71,25 @@
 
                 </div>
             </header>
+
+            <button id="aboutTrigger">
+                <img src="images/info.png" alt="information icon">
+            </button>
+
+            <div id="aboutTheProject" class="hidden">
+                <div class="overlayBackdrop"></div>
+                    <div class="overlayContent"> 
+                        <button class="closeOverlay" aria-label="Close overlay">&times;</button>
+                        <p class="active">Hi! I'm Joanah Martin and this is my Capstone project for <br><b>DES 157B: Interative Media III</b>. This final project is the pinnacle of everything I've learned at UC Davis as both a Design and Cinema & Digital Media major.</p>
+
+                        <p>A story in three parts, the experience reflects on the <b>American Dream</b> its foundations in the past, its tensions in the present, and its possibilities for the future. Each section invites the viewer to engage with a different moment in time.</p>
+
+                        <p>As you explore this story, I invite you to consider how the American Dream has influenced our lives, revealing both its promises and contradictions, and to reflect on what it means for our future together. <br>Thank you for taking the time to experience this journey!</p>
+
+                        <button id="nextArrow" class="arrow-button" aria-label="Next message">↓</button>
+                    </div>
+            </div>
+            
 
             <div class="portal">
                 <img class="back" src="images/PortalBack.png" alt=" the portal itself">
@@ -129,13 +151,14 @@
             
 
             <section class="puzzleContainer" id="puzzleOld">
+                <p class="enterText">complete the newspaper</p>
                 <div class="puzzleLayout">
                     <div class="pieceContainer leftPieces"></div>
                     <div class="boardContainer"></div>
                     <div class="pieceContainer rightPieces"></div>
                 </div>
                 <div class="puzzleButton">
-                    <button id="finishPuzzle1" class="deco-button">done</button>
+                    <button id="finishPuzzle1" class="deco-button">Done</button>
                 </div>
             </section>
 
@@ -257,8 +280,9 @@
                     <p>James Truslow Adams warned of a future where workers blindly follow a capitalist system, convinced it will lead to success, yet unaware of how it often exploits them. Today, that warning rings true.</p>
                 </div>
             </section>
-
+            <p class="enterText">complete the picture</p>
             <section class="puzzleContainer" id="puzzlePresent">
+                
                 <div class="puzzleLayout">
                     <div class="pieceContainer leftPieces"></div>
                     <div class="boardContainer"></div>
@@ -327,7 +351,7 @@
             <div style="height: 50vh;"></div>
             <section class="prePuzzleContent" id="prePuzzleFuture">
                 <div data-aos="screen-on">
-                    <p>The earliest versions of the American Dream weren't promises of wealth but rather calls to action, urging a society grounded in justice, equality, and shared responsibility.Picture a future where your hard work truly matters.</p>
+                    <p>The earliest versions of the American Dream weren't promises of wealth but rather calls to action, urging a society grounded in justice, equality, and shared responsibility. Picture a future where your hard work truly matters.</p>
                 </div>
 
                 <div data-aos="screen-on">
@@ -335,7 +359,7 @@
                 </div>
 
                 <div data-aos="screen-on">
-                    <p>This is not just a hope, it is a vision of a fair America where your voice counts, your family thrives, and your sacrifices are seen and honored. Together, we can build that future.</p>
+                    <p>This is more than just a hopeful vision, it's a call to approach our shared future like pieces moving in harmony across political spectrums and and societal norms.</p>
                 </div>
 
                 
@@ -366,7 +390,7 @@
                 <div class="overlayScene3 overlayContent">
                     <button class="closeOverlay" aria-label="Close overlay">&times;</button>
 
-                    <p>True strength lies in community. When people feel connected, they’re more resilient, healthier, and hopeful. It's a version of the American Dream that isn't abstract or unreachable but tangible, something we would live daily.</p>
+                    <p>True strength lies in community. When people feel connected, they’re more resilient, healthier, and hopeful, ready to face new challenges as a unified team. It's a version of the American Dream that isn't abstract or unreachable but tangible, something we would live daily.</p>
                 </div>
             </div>
 
@@ -386,7 +410,7 @@
                 </div>
 
                 <div data-aos="fade-up" class="postPuzzleText">
-                    <p>The American Dream must evolve from “making it on your own” to “moving forward together.” Community isn't just about where you live but how you live and who you choose to lift up on the way.</p>
+                    <p>The American Dream must evolve from “making it on your own” to “moving forward together,” where success isn’t about finishing first but about how you live, who you support, and the strength of the community you build along the way.</p>
                 </div>
                 
             </section>

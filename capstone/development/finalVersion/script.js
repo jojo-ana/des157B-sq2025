@@ -12,54 +12,52 @@
         const scene3 = document.querySelector('#scene3');
         let sceneCounter = 0;
 
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            const yOffset = scrollY * 0.45;
-
-            let prePuzzleParagraphs = document.querySelectorAll('.prePuzzleContent div');
-            prePuzzleParagraphs.forEach(paragraph => {
-                paragraph.style.transform = `translateY(-${yOffset}px)`;
-            });
-
-        });
-
-        document.querySelectorAll(".closeOverlay").forEach(button => {
-            button.addEventListener("click", () => {
-                const overlay = button.closest("[id^='puzzleInfo']");
-                if (overlay) {
-                    overlay.style.display = 'none';
-                }
-            });
-        });
+        const blinkTop = document.getElementById('blinkTop');
+        const blinkBottom = document.getElementById('blinkBottom');
 
 
         function switchScenes() {
-            if (sceneCounter == 0) {
-                scene0.className = 'hidden';
-                scene1.className = 'showing';
-                window.scrollTo(0, 0);
-                sceneCounter++;
-                console.log(`scene counter: ${sceneCounter}`);
-                AOS.refresh();
-                initParticles();
-                animateScene1();
-            } else if (sceneCounter == 1) {
-                scene1.className = 'hidden';
-                scene2.className = 'showing';
-                window.scrollTo(0, 0);
-                sceneCounter++;
-                console.log(`scene counter: ${sceneCounter}`);
-                AOS.refresh();
-                animateScene2();
-            } else if (sceneCounter == 2) {
-                scene2.className = 'hidden';
-                scene3.className = 'showing';
-                window.scrollTo(0, 0);
-                sceneCounter++;
-                console.log(`scene counter: ${sceneCounter}`);
-                AOS.refresh();
-                animateScene3();
-            }
+            blinkTransition(() => {
+                if (sceneCounter == 0) {
+                    scene0.className = 'hidden';
+                    scene1.className = 'showing';
+                    window.scrollTo(0, 0);
+                    sceneCounter++;
+                    console.log(`scene counter: ${sceneCounter}`);
+                    AOS.refresh();
+                    initParticles();
+                    animateScene1();
+                } else if (sceneCounter == 1) {
+                    scene1.className = 'hidden';
+                    scene2.className = 'showing';
+                    window.scrollTo(0, 0);
+                    sceneCounter++;
+                    console.log(`scene counter: ${sceneCounter}`);
+                    AOS.refresh();
+                    animateScene2();
+                } else if (sceneCounter == 2) {
+                    scene2.className = 'hidden';
+                    scene3.className = 'showing';
+                    window.scrollTo(0, 0);
+                    sceneCounter++;
+                    console.log(`scene counter: ${sceneCounter}`);
+                    AOS.refresh();
+                    animateScene3();
+                }
+            });
+        }
+
+        function blinkTransition(callback) {
+            blinkTop.classList.add('blink-in');
+            blinkBottom.classList.add('blink-in');
+
+            setTimeout(() => {
+                callback();
+                setTimeout(() => {
+                    blinkTop.classList.remove('blink-in');
+                    blinkBottom.classList.remove('blink-in');
+                }, 150); 
+            }, 500); 
         }
 
         portal.forEach(portal => {
@@ -69,6 +67,28 @@
         if (scene0.classList.contains('showing')) {
             animateScene0();
         }
+
+        ///parallax text 
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const yOffset = scrollY * 0.45;
+
+            let prePuzzleParagraphs = document.querySelectorAll('.prePuzzleContent div');
+            prePuzzleParagraphs.forEach(paragraph => {
+                paragraph.style.transform = `translateY(-${yOffset}px)`;
+            });
+        });
+
+
+        // closing the popups
+        document.querySelectorAll(".closeOverlay").forEach(button => {
+            button.addEventListener("click", () => {
+                const overlay = button.closest("[id^='puzzleInfo']");
+                if (overlay) {
+                    overlay.style.display = 'none';
+                }
+            });
+        });
 
 ////////// OPENING: Animations
         function animateScene0() {
@@ -89,6 +109,28 @@
                 { scale: 0.5, opacity: 0 },
                 { scale: 1, opacity: 1, duration: 1.6, delay: 0.5, ease: "bounce.out" });
         }
+
+        ///about the project container
+        const aboutOverlay = document.querySelector("#aboutTheProject");
+        const aboutButton = document.querySelector("#aboutTheProject .closeOverlay");
+        
+        document.querySelector("#aboutTrigger").addEventListener("click", function() {
+            aboutOverlay.classList.remove("hidden");
+        });
+        
+        aboutButton.addEventListener("click", function() {
+            aboutOverlay.classList.add("hidden");
+        });
+
+        const aboutParagraphs = document.querySelectorAll("#aboutTheProject p");
+        const arrowBttn = document.querySelector("#nextArrow");
+        let currentIndex = 0;
+
+        arrowBttn.addEventListener('click', () => {
+            aboutParagraphs[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % aboutParagraphs.length;
+            aboutParagraphs[currentIndex].classList.add('active');
+        });
 
 ////////// SCENE 1: Animations
         function animateScene1() {
