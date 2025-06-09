@@ -243,48 +243,36 @@
             scenes.forEach(scene => initializePuzzle(scene.id, scene.grid));
 
             function initializePuzzle(sceneId, gridSize) {
-                /// Variables for calling Elements in the Scene
                 const sceneElement = document.querySelector(sceneId);
                 const pieceContainers = sceneElement.querySelectorAll(".pieceContainer");
                 const boardContainer = sceneElement.querySelector(".boardContainer");
                 const postContent = sceneElement.querySelector(".postPuzzleContent");
                 const finishButton = sceneElement.querySelector(".puzzleContainer button");
-                
 
-                // Clear containers
-                pieceContainers.forEach(container => container.innerHTML = "");
+                pieceContainers.forEach(c => c.innerHTML = "");
                 boardContainer.innerHTML = "";
 
-                //// Variables for calculating the total pieces
                 const totalPieces = gridSize * gridSize;
                 const puzzlePieces = generateShuffledPieces(totalPieces);
                 const midPoint = Math.ceil(totalPieces / 2);
+                const sceneName = sceneId.replace("#scene", "");
 
-                puzzlePieces.forEach((num, index) => {
+                puzzlePieces.forEach((num, i) => {
                     const piece = document.createElement("div");
                     piece.className = "piece";
                     piece.dataset.number = num;
-
                     const wrapper = document.createElement("div");
                     wrapper.classList.add("piece-wrapper");
 
-                    const sceneName = sceneId.replace("#scene", "");
-
                     if (sceneName === "3") {
                         wrapper.classList.add("flip-container");
-
-                        const front = document.createElement("img");
-                        front.src = `images/puzzle${sceneName}/puzzle${num}.png`;
-                        front.alt = `Puzzle piece ${num}`;
-                        front.classList.add("front");
-
-                        const back = document.createElement("img");
-                        back.src = `images/puzzle${sceneName}/alt${num}.png`;
-                        back.alt = `Alternate puzzle piece ${num}`;
-                        back.classList.add("back");
-
-                        wrapper.appendChild(front);
-                        wrapper.appendChild(back);
+                        ["front", "back"].forEach(side => {
+                            const img = document.createElement("img");
+                            img.src = `images/puzzle${sceneName}/${side === "front" ? "puzzle" : "alt"}${num}.png`;
+                            img.alt = `${side === "front" ? "Puzzle" : "Alternate puzzle"} piece ${num}`;
+                            img.classList.add(side);
+                            wrapper.appendChild(img);
+                        });
                     } else {
                         const img = document.createElement("img");
                         img.src = `images/puzzle${sceneName}/puzzle${num}.png`;
@@ -293,65 +281,49 @@
                     }
 
                     piece.appendChild(wrapper);
-
-                    piece.style.top = Math.random() * 400 + "px";
-                    piece.style.left = Math.random() * 100 + "px";
-
-                    const targetContainer = index < midPoint ? pieceContainers[0] : pieceContainers[1];
-                    targetContainer.style.position = "relative";
-                    targetContainer.appendChild(piece);
+                    piece.style.top = `${Math.random() * 400}px`;
+                    piece.style.left = `${Math.random() * 100}px`;
+                    const target = i < midPoint ? pieceContainers[0] : pieceContainers[1];
+                    target.style.position = "relative";
+                    target.appendChild(piece);
                 });
 
-
-                // create droppable board
                 for (let i = 1; i <= totalPieces; i++) {
                     const slot = document.createElement("div");
                     slot.className = "droppableSpace";
                     slot.dataset.location = i;
                     boardContainer.appendChild(slot);
-                    
                 }
-                // calling on functions for the draggable and droppable from jquerry UI
+
                 makeDraggable(sceneId);
                 makeDroppable(sceneId);
 
-
-                // checking to see if the elements are in the right place using a switch
-                finishButton.addEventListener("click", function () {
+                finishButton.addEventListener("click", () => {
                     const correctCount = checkAndUpdatePuzzle(sceneElement);
                     const totalSlots = sceneElement.querySelectorAll(".droppableSpace").length;
-                    const isCorrect = correctCount === totalSlots;
-
-                    if (isCorrect) {
+                    if (correctCount === totalSlots) {
                         const audioVic = new Audio('sounds/capstoneVic.wav');
-                        audioVic.play();
                         audioVic.volume = 0.25;
+                        audioVic.play();
                         revealCompletedPuzzle(sceneId, boardContainer, postContent);
                         AOS.refresh();
 
-                        document.querySelectorAll('[id^="puzzleInfo"]:not(.hidden)').forEach(infoBox => {
-                            const overlay = infoBox.querySelector(".overlayContent");
+                        document.querySelectorAll('[id^="puzzleInfo"]:not(.hidden)').forEach(box => {
+                            const overlay = box.querySelector(".overlayContent");
                             if (overlay) {
                                 gsap.to(overlay, {
-                                    autoAlpha: 0,
-                                    y: -20,
-                                    duration: 0.4,
-                                    ease: "power1.inOut",
-                                    onComplete: () => {
-                                        infoBox.classList.add("hidden");
-                                        gsap.set(overlay, { clearProps: "all" });
-                                    }
+                                    autoAlpha: 0, y: -20, duration: 0.4, ease: "power1.inOut",
+                                    onComplete: () => { box.classList.add("hidden"); gsap.set(overlay, { clearProps: "all" }); }
                                 });
                             }
                         });
                     } else {
                         alert("Some pieces are missing or incorrectly placed!");
-
                         sceneElement.querySelectorAll(".droppableSpace").forEach(slot => {
                             const piece = slot.querySelector(".piece");
                             if (!piece || piece.dataset.number !== slot.dataset.location) {
                                 slot.style.border = "2px solid red";
-                                slot.style.backgroundColor = "#F09D9D"; 
+                                slot.style.backgroundColor = "#F09D9D";
                             } else {
                                 slot.style.border = "";
                                 slot.style.backgroundColor = "";
@@ -361,32 +333,41 @@
                 });
 
                 function revealCompletedPuzzle(sceneId, boardContainer, postContent) {
-                    postContent.style.display = "flex";
-
                     const sceneName = sceneId.replace("#scene", "");
-                    boardContainer.innerHTML = "";
-                    boardContainer.style.display = "block";
-
-                    const fullImage = document.createElement("img");
-                    fullImage.src = `images/puzzle${sceneName}/puzzle-complete.png`;
-                    fullImage.alt = "Completed puzzle illustration";
-                    fullImage.style.width = "100%";
-                    fullImage.style.height = "100%";
-                    fullImage.style.objectFit = "contain";
-
-                    boardContainer.appendChild(fullImage);
-
-                    fullImage.addEventListener("load", () => {
-                            gsap.from(fullImage, {
-                            opacity: 0,
-                            scale: 0.9,
-                            duration: 1,
-                            ease: "power2.out"
+                    postContent.style.display = "flex";
+                    if (sceneName === "3") {
+                        const scene = document.querySelector(sceneId);
+                        const locationsToRemove = ["1", "2", "4", "5", "6", "7", "8", "9", "10", "16"];
+                        locationsToRemove.forEach(loc => {
+                            const square = scene.querySelector(`.droppableSpace[data-location="${loc}"]`);
+                            if (square) {
+                                const piece = square.querySelector(".piece");
+                                if (piece) piece.remove();
+                            }
                         });
-                    });
-                    
+                        [["3", "5"], ["11", "6"], ["14", "7"], ["15", "11"]].forEach(([num, loc]) => {
+                            const piece = scene.querySelector(`[data-number="${num}"]`);
+                            const target = scene.querySelector(`.droppableSpace[data-location="${loc}"]`);
+                            if (piece && target) target.appendChild(piece);
+                        });
+                    } else {
+                        boardContainer.innerHTML = "";
+                        boardContainer.style.display = "block";
+                        showPuzzleImage();
+                    }
+
+                    function showPuzzleImage() {
+                        const fullImage = document.createElement("img");
+                        fullImage.src = `images/puzzle${sceneName}/puzzle-complete.png`;
+                        fullImage.alt = "Completed puzzle illustration";
+                        fullImage.style.cssText = "width:100%;height:100%;object-fit:contain";
+                        boardContainer.appendChild(fullImage);
+                        fullImage.addEventListener("load", () => {
+                            gsap.from(fullImage, { opacity: 0, scale: 0.9, duration: 1, ease: "power2.out" });
+                        });
+                    }
                 }
-            } 
+            }
 
             function checkAndUpdatePuzzle(sceneElement) {
                 let correctCount = 0;
@@ -395,16 +376,11 @@
 
                 allSlots.forEach(slot => {
                     const piece = slot.querySelector(".piece");
-                    if (piece && piece.dataset.number == slot.dataset.location) {
-                        correctCount++;
-                    }
+                    if (piece && piece.dataset.number == slot.dataset.location) correctCount++;
                 });
 
-                console.log(`we at ${correctCount}`);
-
-                if (sceneId === "scene1") {
-                    if (correctCount >= 2) showOverlay("puzzleInfo1");
-                } else if (sceneId === "scene2") {
+                if (sceneId === "scene1" && correctCount >= 2) showOverlay("puzzleInfo1");
+                else if (sceneId === "scene2") {
                     if (correctCount >= 3) showOverlay("puzzleInfo2");
                     if (correctCount >= 6) showOverlay("puzzleInfo3");
                 } else if (sceneId === "scene3") {
@@ -418,36 +394,24 @@
                     if (box && box.classList.contains("hidden")) {
                         box.classList.remove("hidden");
                         const overlay = box.querySelector(".overlayContent");
-                        if (overlay) {
-                            gsap.fromTo(overlay,
-                                { autoAlpha: 0, scale: 0.6, y: 100 },
-                                { 
-                                    autoAlpha: 1, 
-                                    scale: 1, 
-                                    y: 0, 
-                                    duration: 0.6, 
-                                    ease: "bounce.out" 
-                                }
-                            );
-                        }
+                        if (overlay) gsap.fromTo(overlay,
+                            { autoAlpha: 0, scale: 0.6, y: 100 },
+                            { autoAlpha: 1, scale: 1, y: 0, duration: 0.6, ease: "bounce.out" });
                     }
                 }
-
                 return correctCount;
             }
 
             function generateShuffledPieces(count) {
                 const pieces = [];
-                for (let i = 1; i <= count; i++) {
-                    pieces.push(i);
-                }
-                return pieces.sort(() => Math.random() - 0.5); //https://www.codemzy.com/blog/shuffle-array-javascript 
+                for (let i = 1; i <= count; i++) pieces.push(i);
+                return pieces.sort(() => Math.random() - 0.5);
             }
 
             function makeDraggable(sceneId) {
                 $(`${sceneId} .piece`).draggable({
                     revert: "invalid",
-                    start: function () {
+                    start() {
                         if ($(this).hasClass("droppedPiece")) {
                             $(this).removeClass("droppedPiece");
                             $(this).parent().removeClass("piecePresent");
@@ -459,20 +423,12 @@
             function makeDroppable(sceneId) {
                 $(`${sceneId} .droppableSpace`).droppable({
                     hoverClass: "ui-state-highlight",
-                    accept: function () {
-                        return !$(this).hasClass("piecePresent");
-                    },
-                    drop: function (event, ui) {
+                    accept() { return !$(this).hasClass("piecePresent"); },
+                    drop(event, ui) {
                         const piece = ui.draggable;
                         $(this).addClass("piecePresent");
-                        piece.addClass("droppedPiece").css({
-                        top: 0,
-                        left: 0,
-                        position: "relative"
-                        }).appendTo($(this));
-
-                        const sceneElement = document.querySelector(sceneId);
-                        checkAndUpdatePuzzle(sceneElement);
+                        piece.addClass("droppedPiece").css({ top: 0, left: 0, position: "relative" }).appendTo($(this));
+                        checkAndUpdatePuzzle(document.querySelector(sceneId));
                     }
                 });
             }
