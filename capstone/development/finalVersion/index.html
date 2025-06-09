@@ -29,7 +29,7 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
     <!-- add the link to the THREE js here -->
-    <script type="importmap" defer>
+    <script type="importmap">
         {
             "imports": {
                 "three": "https://cdn.jsdelivr.net/npm/three@v0.177.0/build/three.module.js",
@@ -37,19 +37,17 @@
             }
         }
     </script>
-    <script type="module" src="main.js" defer></script>
+    <script type="module" src="main.js"></script>
 
     <!-- link to custom js -->
     <script src="script.js" defer></script>
-
 </head>
 
 <body>
-<div id="blinkTop" class="blink blink-top"></div>
-<div id="blinkBottom" class="blink blink-bottom"></div>
+    <div id="blinkTop" class="blink blink-top"></div>
+    <div id="blinkBottom" class="blink blink-bottom"></div>
 
-
-<!------- LANDING PAGE ------->
+<!-- LANDING PAGE -->
     <div id="opening" class="showing">
         <div class="content">
             <header>
@@ -89,7 +87,6 @@
                         <button id="nextArrow" class="arrow-button" aria-label="Next message">↓</button>
                     </div>
             </div>
-            
 
             <div class="portal">
                 <img class="back" src="images/PortalBack.png" alt=" the portal itself">
@@ -118,7 +115,7 @@
         </div>
     </div>
 
-<!------- SCENE 1: PAST ------->
+<!-- SCENE 1: PAST -->
     <div id="scene1" class="hidden">
         <div id="particles-js"></div>
         <div class="scenes">
@@ -149,7 +146,6 @@
 
             </section>
             
-
             <section class="puzzleContainer" id="puzzleOld">
                 <p class="enterText">complete the newspaper</p>
                 <div class="puzzleLayout">
@@ -171,7 +167,6 @@
                 </div>
             </div>
 
-            
             <section class="postPuzzleContent" style="display: none">
                 <p class="enterText" id="anchorText">Scroll</p>
                 <div data-aos="fade-up" class="postPuzzleText">
@@ -193,7 +188,7 @@
         </div>
     </div>
 
-<!------- SCENE 2: PRESENT ------->
+<!-- SCENE 2: PRESENT -->
     <div id="scene2" class="hidden">
         <div class="scenes">
             <header>
@@ -205,13 +200,13 @@
             <div id="svgContainer" class="svg-container">
                 <div id="svgBG1">
                     <svg width="402" height="769" viewBox="0 0 402 769" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M185 729.042C158.5 714.542 135.5 725.042 82.5 768.042L0 768.042L-3.15378e-05 46.5425C84.1666 46.5425 149.839 -58.1781 277 46.5425C336.5 95.5425 363 231.042 336.5 257.542C310 284.042 379.5 409.542 390 469.042C400.5 528.542 412.5 565.042 379.5 655.542C346.5 746.042 211.5 743.542 185 729.042Z" fill="#EDF0F5" fill-opacity="0.84"/>
+                    <path d="M185 729.042C158.5 714.542 135.5 725.042 82.5 768.042L0 768.042L-3.15378e-05 46.5425C84.1666 46.5425 149.839 -58.1781 277 46.5425C336.5 95.5425 363 231.042 336.5 257.542C310 284.042 379.5 409.542 390 469.042C400.5 528.542 412.5 565.042 379.5 655.542C346.5 746.042 211.5 743.542 185 729.042Z" fill="#F6F6F6" fill-opacity="0.84"/>
                     </svg>
                 </div>
 
                 <div id="svgBG2">
                     <svg width="647" height="348" viewBox="0 0 647 348" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M34.973 160.522C47.9757 137.528 38.5599 117.571 0 71.584V0H647V240.349C647 261.607 481.551 314.97 457.787 291.976C434.024 268.982 321.482 329.286 268.126 338.397C214.77 347.508 182.039 357.92 100.884 329.286C19.7283 300.653 21.9702 183.515 34.973 160.522Z" fill="#EDF0F5" fill-opacity="0.84"/>
+                    <path d="M34.973 160.522C47.9757 137.528 38.5599 117.571 0 71.584V0H647V240.349C647 261.607 481.551 314.97 457.787 291.976C434.024 268.982 321.482 329.286 268.126 338.397C214.77 347.508 182.039 357.92 100.884 329.286C19.7283 300.653 21.9702 183.515 34.973 160.522Z" fill="#F6F6F6" fill-opacity="0.84"/>
                     </svg>
                 </div>
 
@@ -263,20 +258,20 @@
 
             <div style="height: 50vh;"></div>
             <section class="prePuzzleContent">
-                <div data-aos="fade-up">
+                <div data-aos="zoom-in-up">
                     <p>Transformed from American stability to one of American exceptionalism–a narrative of shared experiences but ambiguous to make it seem it can be applied to all. However, the mental model has shifted from collective growth to one of individual growth, how one can achieve their American Dream. America is a land of possibility and opportunity, allowing for <b>social mobility</b> and determining your own fate through hard work.</p>
                 </div>
 
-                <div data-aos="fade-up">
+                <div data-aos="zoom-in-up">
                     <p>But the dream comes at a cost, literally.</p>
                 </div>
 
-                <div data-aos="fade-up">
+                <div data-aos="zoom-in-up">
                     <p>As society places more focus on individual success, people are more likely to feel disconnected and anxious, with shared values and a sense of belonging gradually fading away.</p>
                 </div>
 
 
-                <div data-aos="fade-up">
+                <div data-aos="zoom-in-up">
                     <p>James Truslow Adams warned of a future where workers blindly follow a capitalist system, convinced it will lead to success, yet unaware of how it often exploits them. Today, that warning rings true.</p>
                 </div>
             </section>
@@ -310,17 +305,15 @@
                     <button class="closeOverlay" aria-label="Close overlay">&times;</button>
 
                     <p>Capitalism has created great wealth, but it’s not shared equally. Those born into privilege have access to better education, networks, and safety nets, making success easier. Meanwhile, low-income people face constant barriers, stuck in a cycle where the rich keep rising and the working class stays in place, no matter how hard they work.</p>
-                    <!-- FIND NUMERICAL FACT TO SUPPORT THIS -->
                 </div>
             </div>
 
             <!-- <div style="height: 40vh"></div> -->
             <section class="postPuzzleContent" style="display: none">
                 <p class="enterText">Scroll</p>
-                <div data-aos="fade-up" class="postPuzzleText">
+                <div data-aos="zoom-in-up" class="postPuzzleText">
                     <p>As inequality grows and it becomes harder to move up in society, real risks start to appear. Many young people, weighed down by debt, high rent, and low pay, feel shut out of stable futures. This frustration leads to distrust, divides communities, and fuels movements that offer quick fixes instead of real solutions. If nothing changes, it won’t just hurt the economy — it could weaken our democracy too.</p>
                 </div>
-                
                 
                 <div class="portal">
                     <img class="back" src="images/PortalBack.png" alt=" the portal itself">
@@ -329,11 +322,10 @@
                 <div style="height: 40vh"></div>
             </section>
             <div style="height: 20vh"></div>
-        </div>
-        
+        </div>    
     </div>
 
-<!------- SCENE 3: FUTURE -------> 
+<!-- SCENE 3: FUTURE --> 
     <div id="scene3" class="hidden">
         <div id="wrapper3D">
             <canvas id="canvas3D"></canvas>
@@ -361,9 +353,8 @@
                 <div data-aos="screen-on">
                     <p>This is more than just a hopeful vision, it's a call to approach our shared future like pieces moving in harmony across political spectrums and and societal norms.</p>
                 </div>
-
-                
             </section>
+            <p class="enterText">put the pieces in the game</p>
                       
             <section class="puzzleContainer" id="puzzleFuture">
                 <div class="puzzleLayout">
@@ -381,7 +372,7 @@
                 <div class="overlayScene3 overlayContent">
                     <button class="closeOverlay" aria-label="Close overlay">&times;</button>
 
-                    <p>The redistribution of wealth isn't about punishment but about balance. When opportunities are shared more broadly, communities are stabilized and economic growth becomes more sustainable. Reforming the financial system means limiting hoarding and giving everyone a fair shot at success.</p>
+                    <p>Redistributing the wealth isn't about punishment, but about balance. When opportunities are shared more, communities are stabilized and economic growth becomes more sustainable for all. Reforming the financial system means giving everyone a fair shot at success.</p>
                 </div>
             </div>
 
@@ -406,17 +397,17 @@
             <section class="postPuzzleContent" style="display: none" id="postPuzzleFuture">
                 <p class="enterText">Scroll</p>
                 <div data-aos="fade-up" class="postPuzzleText">
-                    <p>Obsession over wealth or status fragments society. A future that continues down that path risks deepening instability would build a world where everyone can thrive.</p>
+                    <p>Obsession over wealth or status fragments society. A future that continues down that path risks deepening instability. We move through a system that once rewarded going it alone. But the goals are shifting.</p>
                 </div>
 
                 <div data-aos="fade-up" class="postPuzzleText">
-                    <p>The American Dream must evolve from “making it on your own” to “moving forward together,” where success isn’t about finishing first but about how you live, who you support, and the strength of the community you build along the way.</p>
+                    <p>Success is no longer defined by who finishes first, but by how we live, who we uplift, and the communities we build. The path forward isn’t a race—it’s a shared journey. The American Dream must evolve from individual triumph to collective progress.</p>
                 </div>
                 
             </section>
             <div style="height: 40vh"></div>
-            <!-- <div style="height: 20vh"></div> -->
 
+            <p class="enterText">A project by jojoana</p>
         </div>
         
     </div>

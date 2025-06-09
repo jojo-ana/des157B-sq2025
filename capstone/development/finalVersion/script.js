@@ -232,7 +232,7 @@
                 const midPoint = Math.ceil(totalPieces / 2);
 
                 // Distribute pieces to left and right containers
-                puzzlePieces.forEach((num, index) => {
+                /* puzzlePieces.forEach((num, index) => {
                     const piece = document.createElement("div");
                     piece.className = "piece";
                     piece.dataset.number = num;
@@ -255,7 +255,51 @@
                     const targetContainer = index < midPoint ? pieceContainers[0] : pieceContainers[1];
                     targetContainer.style.position = "relative";
                     targetContainer.appendChild(piece);
+                }); */
+
+                puzzlePieces.forEach((num, index) => {
+                    const piece = document.createElement("div");
+                    piece.className = "piece";
+                    piece.dataset.number = num;
+
+                    const wrapper = document.createElement("div");
+                    wrapper.classList.add("piece-wrapper");
+
+                    const sceneName = sceneId.replace("#scene", "");
+
+                    if (sceneName === "3") {
+                        wrapper.classList.add("flip-container");
+
+                        const front = document.createElement("img");
+                        front.src = `images/puzzle${sceneName}/puzzle${num}.png`;
+                        front.alt = `Puzzle piece ${num}`;
+                        front.classList.add("front");
+
+                        const back = document.createElement("img");
+                        back.src = `images/puzzle${sceneName}/alt${num}.png`;
+                        back.alt = `Alternate puzzle piece ${num}`;
+                        back.classList.add("back");
+
+                        wrapper.appendChild(front);
+                        wrapper.appendChild(back);
+                    } else {
+                        const img = document.createElement("img");
+                        img.src = `images/puzzle${sceneName}/puzzle${num}.png`;
+                        img.alt = `Puzzle piece ${num}`;
+                        wrapper.appendChild(img);
+                    }
+
+                    // ✅ Still append wrapper to piece
+                    piece.appendChild(wrapper);
+
+                    piece.style.top = Math.random() * 400 + "px";
+                    piece.style.left = Math.random() * 100 + "px";
+
+                    const targetContainer = index < midPoint ? pieceContainers[0] : pieceContainers[1];
+                    targetContainer.style.position = "relative";
+                    targetContainer.appendChild(piece);
                 });
+
 
                 // create droppable board
                 for (let i = 1; i <= totalPieces; i++) {
@@ -279,6 +323,9 @@
                     // $('html, body').animate({})
 
                     if (isCorrect) {
+                        const audioVic = new Audio('sounds/capstoneVic.wav');
+                        audioVic.play();
+                        audioVic.volume = 0.25;
                         revealCompletedPuzzle(sceneId, boardContainer, postContent);
                         AOS.refresh();
                     } else {
