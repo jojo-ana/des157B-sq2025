@@ -55,7 +55,7 @@ text { font-family: "Roboto", sans-serif; }
 p { 
     font-family: "Space Mono", monospace;
     color:rgb(255, 255, 255);
-    font-size: larger;
+    font-size: 21px;
 }
 
 /***** PORTAL CONTENT *****/
@@ -288,6 +288,7 @@ h1.title { z-index: 1; margin: .67em 0 0 0; }
     z-index: 5;
     width: 60vw;
     line-height: 55px ;
+    padding: 0 1% 10%;
 }
 
 .puzzleContainer {
@@ -432,7 +433,11 @@ h1.title { z-index: 1; margin: .67em 0 0 0; }
     cursor: pointer;
     display: inline-block;
     color: #d64242;
-    text-align: center;
+}
+
+.hoverInfo.alwaysShow .hoverInfoText{
+    visibility: visible;
+    opacity: 1;
 }
 
 .hoverInfo:hover {
@@ -455,11 +460,13 @@ h1.title { z-index: 1; margin: .67em 0 0 0; }
     left: 50%;
     opacity: 0;
     transition: opacity 0.5s;
+    transform: translateX(-50%);
     animation: floatHover 3s ease-in-out infinite;
     text-align: center;
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 15px;
+    line-height: 32px;
 }
 
 
@@ -472,7 +479,6 @@ h1.title { z-index: 1; margin: .67em 0 0 0; }
     }
 }
  
-
 .hoverInfoText::after {
   content: "";
   position: absolute;
@@ -482,11 +488,6 @@ h1.title { z-index: 1; margin: .67em 0 0 0; }
   border-width: 6px;
   border-style: solid;
   border-color: #fff transparent transparent transparent;
-}
-
-.hoverInfo:hover .hoverInfoText {
-  visibility: visible;
-  opacity: 1;
 }
 
 /***** SCENES 1 *****/
@@ -541,16 +542,16 @@ h1.title { z-index: 1; margin: .67em 0 0 0; }
 
 #scene2 .prePuzzleContent p, #scene2 .postPuzzleContent p, #scene2 .overlayContent p { 
     font-family: "Inter", sans-serif; 
-    line-height: 30px;
+    line-height: 48px;
     color: #6d6d6d;
 }
 
-#scene2 .prePuzzleContent div, #scene2 .postPuzzleContent .postPuzzleText, #scene2 .overlayContent {
-background: white;
-border-radius: 10px;
-padding: 10px 4%;
-margin: 10px 10%;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+#scene2 .prePuzzleContent .prePuzzleText, #scene2 .postPuzzleContent .postPuzzleText, #scene2 .overlayContent {
+    background: white;
+    border-radius: 10px;
+    padding: 10px 4%;
+    margin: 10px 10%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 #scene2 .infoButton {
@@ -563,7 +564,24 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 #scene2 .overlayContent p {
-    padding: 48px 0;
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+#scene2 #puzzleInfo2 .overlayContent {
+    top: 3%; left: 2%;
+    transform: translate(0);
+}
+
+#scene2 #puzzleInfo3 .overlayContent {
+    top: 27%; left: 2%;
+    transform: translate(0);
+}
+
+#scene2 .droppableSpace.ui-state-highlight {
+  background-color: #c5e9e4;
+  box-shadow: inset 0 0 0 3px #4ea3a0;
+  transition: background-color 0.2s ease;
 }
 
 #scene2 .boardContainer {
@@ -727,7 +745,7 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   animation: screenTurnOn 1s ease-out forwards;
 }
 
-#finishPuzzle3 {
+.scene3Button {
     font-family: "Oxanium", sans-serif;
     color: #fafafa;
     background: #0e0e0e;
@@ -745,7 +763,7 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         inset 0 0 8px rgba(0, 255, 255, 0.2);
 }
 
-#finishPuzzle3:hover {
+.scene3Button:hover {
   background: #00ffff;
   color: #0e0e0e;
   box-shadow:

@@ -51,7 +51,7 @@
     <div id="opening" class="showing">
         <div class="content">
             <header>
-                <h1 class="title">American <span class="hoverInfo">Dream<span class="hoverInfoText">Hover each red element to learn a little more!</span></h1>
+                <h1 class="title">American <span class="hoverInfo alwaysShow">Dream<span class="hoverInfoText">Hover each red element to learn a little more!</span></span></h1>
 
                 <svg id="headerSVG" width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
                     <path id="headerPath" d="M 100,100 m -52.5,0 a 52.5,52.5 0 1,1 105,0 a 52.5,52.5 0 1,1 -105,0" fill="transparent"/>
@@ -172,18 +172,18 @@
                 <div class="overlayScene1 overlayContent">
                     <button class="closeOverlay" aria-label="Close overlay">&times;</button>
 
-                    <p> At the heart, it's the collective hope that people can rise above their circumstances. In this vision, the dream is not solely about personal success, but about contributing to the welfare and progress of society as a whole.</p>
+                    <p> At the heart, it's the collective hope that people can rise above their circumstances. In this vision, it is not solely about personal success, but about contributing to the welfare and progress of society as a whole.</p>
                 </div>
             </div>
 
             <section class="postPuzzleContent" style="display: none">
                 <p class="enterText" id="anchorText">Scroll</p>
                 <div data-aos="fade-up" class="postPuzzleText">
-                    <p>The social side of the American Dream showed that real progress comes when people work together. It meant changing how we see gender roles, standing up for workers’ rights, and pushing back against racial injustice. These efforts proved that no one rises alone — we grow by lifting each other up.</p>
+                    <p>The <span class="hoverInfo"><b>social side</b><span class="hoverInfoText">It meant changing how we see gender roles, standing up for workers’ rights, and pushing back against racial injustice.</span></span> of the American Dream showed that real progress comes when people work together. These efforts proved that no one rises alone — we grow by lifting each other up.</p>
                 </div>
                 
                 <div data-aos="fade-up" class="postPuzzleText">
-                    <p>It is in this spirit of togetherness that the dream truly took root, reminding us that true greatness is realized not alone, but through the bonds we forge and the communities we built.</p>
+                    <p>It is in this spirit of togetherness that the dream truly took root.</p>
                 </div>
 
                 <div style="height: 40vh"></div>
@@ -267,26 +267,22 @@
 
             <div style="height: 50vh;"></div>
             <section class="prePuzzleContent">
-                <div data-aos="zoom-in-up">
+                <div data-aos="zoom-in-up" class="prePuzzleText">
                     <p>Transformed from American stability to one of American exceptionalism–a narrative of shared experiences but ambiguous to make it seem it can be applied to all. </p>
                 </div>
 
-                <div data-aos="zoom-in-up">
-                    <p>However, there has been a shift from collective growth to  focus on the individual, how one can achieve <i>their</i> American Dream. America is a land of possibility and opportunity, allowing for <b>social mobility</b> and determining your own fate through hard work.</p>
+                <div data-aos="zoom-in-up" class="prePuzzleText">
+                    <p>America is a land of possibility and opportunity, allowing for <b>social mobility</b> and determining your own fate through hard work.</p>
                 </div>
 
-                <div data-aos="zoom-in-up">
+                <div data-aos="zoom-in-up" class="prePuzzleText"> 
+                    <p>However, there has been a shift from collective growth to  focus on the individual, how one can achieve <i>their</i> American Dream.</p>
+                </div>
+
+                <div data-aos="zoom-in-up" class="prePuzzleText">
                     <p>But the dream <span class="hoverInfo"><b>comes at a cost</b><span class="hoverInfoText"> As society places more focus on individual success, people are more likely to feel disconnected and anxious, with shared values and a sense of belonging gradually fading away.</span></span>, literally.</p>
                 </div>
 
-                <!-- <div data-aos="zoom-in-up">
-                    <p></p>
-                </div> -->
-
-
-                <div data-aos="zoom-in-up">
-                    <p>James Truslow Adams warned of a future where workers blindly follow a capitalist system, convinced it will lead to success, yet unaware of how it often exploits them. Today, that warning rings true.</p>
-                </div>
 
             </section>
             <p class="enterText">complete the picture</p>
@@ -297,7 +293,7 @@
 
             <div class="hidden infoContent">
                 <div> 
-                    <p class="active">Look at the numbers in the pictures to make a complete image</p>
+                    <p class="active">Look for the numbers in the pictures</p>
                 </div>
             </div>
 
@@ -316,16 +312,15 @@
             </section>
 
             <div id="puzzleInfo2" class="hidden">
-                <div class="overlayBackdrop"></div>
                 <div class="overlayScene2 overlayContent">
                     <button class="closeOverlay" aria-label="Close overlay">&times;</button>
 
-                    <p>Many continue to chase the promise of upward mobility, believing hard work alone guarantees prosperity. But the system they participate in too often rewards wealth over labor, leaving workers undervalued and undercompensated.</p>
+                    <p>The system we participate in often rewards wealth over labor, leaving workers undervalued and undercompensated.</p>
                 </div>
+                
             </div>
 
             <div id="puzzleInfo3" class="hidden">
-                <div class="overlayBackdrop"></div>
                 <div class="overlayScene2 overlayContent">
                     <button class="closeOverlay" aria-label="Close overlay">&times;</button>
 
@@ -406,7 +401,7 @@
                     <div class="pieceContainer rightPieces"></div>
                 </div>
                 <div class="puzzleButton">
-                    <button id="finishPuzzle3">Done</button>
+                    <button id="finishPuzzle3" class="scene3Button">Done</button>
                 </div>
             </section>
 
@@ -446,11 +441,16 @@
                 <div data-aos="fade-up" class="postPuzzleText">
                     <p>Success is no longer defined by who finishes first, but by how we live, who we uplift, and the communities we build. The path forward isn’t a race—it’s a shared journey. The American Dream must evolve from individual triumph to collective progress.</p>
                 </div>
+
+                <p class="enterText">A project by jojoana</p>
+                <button class="restartBtn scene3Button" onclick="location.reload()" >Restart</button>
                 
             </section>
+
             <div style="height: 40vh"></div>
 
-            <p class="enterText">A project by jojoana</p>
+            
+
         </div>
         
     </div>

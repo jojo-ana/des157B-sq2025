@@ -68,18 +68,6 @@
             animateScene0();
         }
 
-        ///parallax text 
-        window.addEventListener('scroll', () => {
-            const scrollY = window.scrollY;
-            const yOffset = scrollY * 0.45;
-
-            let prePuzzleParagraphs = document.querySelectorAll('.prePuzzleContent div');
-            prePuzzleParagraphs.forEach(paragraph => {
-                paragraph.style.transform = `translateY(-${yOffset}px)`;
-            });
-        });
-
-
         // closing the popups
         document.querySelectorAll(".closeOverlay").forEach(button => {
             button.addEventListener("click", () => {
@@ -90,6 +78,52 @@
             });
         });
 
+        // hover animations 
+        document.querySelectorAll('.hoverInfo').forEach((element) => {
+            const hoverInfoText = element.querySelector('.hoverInfoText');
+            let split = null;
+            
+            element.addEventListener('mouseenter', () => {
+                gsap.to(element, {
+                    scale: 1.05,
+                    duration: 0.3,
+                    ease: "power2.out"
+                });
+
+                split = SplitText.create(hoverInfoText, { type: "lines", linesClass: "lineChild" });
+
+                gsap.from(split.lines, {
+                    y: 50,
+                    opacity: 0,
+                    ease: "power3.out",
+                    stagger: 0.1,
+                    duration: 0.6
+                });
+
+                gsap.to(hoverInfoText, {
+                    autoAlpha: 1,
+                    duration: 0.2
+                });
+
+                console.log("line animation triggered");
+            });
+
+            element.addEventListener('mouseleave', () => {
+                gsap.to(element, {
+                    scale: 1,
+                    duration: 0.3,
+                    ease: "power2.in"
+                });
+
+                gsap.to(hoverInfoText, {
+                    autoAlpha: 0,
+                    y: 0,
+                    duration: 0.3,
+                    ease: "power1.inOut"
+                });
+                if (split) split.revert();
+            });
+        });
 ////////// OPENING: Animations
         function animateScene0() {
             ///// Title Animation
@@ -196,7 +230,6 @@
             console.log("animation 3 is playing now");   
         }
 
-
 ////////// Puzzle Code
         $(document).ready(function () {
             // Scene Object
@@ -296,6 +329,22 @@
                         audioVic.volume = 0.25;
                         revealCompletedPuzzle(sceneId, boardContainer, postContent);
                         AOS.refresh();
+
+                        document.querySelectorAll('[id^="puzzleInfo"]:not(.hidden)').forEach(infoBox => {
+                            const overlay = infoBox.querySelector(".overlayContent");
+                            if (overlay) {
+                                gsap.to(overlay, {
+                                    autoAlpha: 0,
+                                    y: -20,
+                                    duration: 0.4,
+                                    ease: "power1.inOut",
+                                    onComplete: () => {
+                                        infoBox.classList.add("hidden");
+                                        gsap.set(overlay, { clearProps: "all" });
+                                    }
+                                });
+                            }
+                        });
                     } else {
                         alert("Some pieces are missing or incorrectly placed!");
                     }
@@ -343,34 +392,34 @@
 
                 console.log(`we at ${correctCount}`);
 
-                const infoBox = document.getElementById("puzzleInfo1");
-                const infoBox2 = document.getElementById("puzzleInfo2");
-                const infoBox3 = document.getElementById("puzzleInfo3");
-                const infoBox4 = document.getElementById("puzzleInfo4");
-                const infoBox5 = document.getElementById("puzzleInfo5");
-                const infoBox6 = document.getElementById("puzzleInfo6");
-
                 if (sceneId === "scene1") {
-                    if (correctCount >= 2 && infoBox.classList.contains("hidden")) {
-                        console.log("show overlay now");
-                        infoBox.classList.remove("hidden");
-                    }
+                    if (correctCount >= 2) showOverlay("puzzleInfo1");
                 } else if (sceneId === "scene2") {
-                    if (correctCount >= 3 && infoBox2.classList.contains("hidden")) {
-                        infoBox2.classList.remove("hidden");
-                    }
-                    if (correctCount >= 6 && infoBox3.classList.contains("hidden")) {
-                        infoBox3.classList.remove("hidden");
-                    }
+                    if (correctCount >= 3) showOverlay("puzzleInfo2");
+                    if (correctCount >= 6) showOverlay("puzzleInfo3");
                 } else if (sceneId === "scene3") {
-                    if (correctCount >= 4 && infoBox4.classList.contains("hidden")) {
-                        infoBox4.classList.remove("hidden");
-                    }
-                    if (correctCount >= 8 && infoBox5.classList.contains("hidden")) {
-                        infoBox5.classList.remove("hidden");
-                    }
-                    if (correctCount >= 12 && infoBox6.classList.contains("hidden")) {
-                        infoBox6.classList.remove("hidden");
+                    if (correctCount >= 4) showOverlay("puzzleInfo4");
+                    if (correctCount >= 8) showOverlay("puzzleInfo5");
+                    if (correctCount >= 12) showOverlay("puzzleInfo6");
+                }
+
+                function showOverlay(id) {
+                    const box = document.getElementById(id);
+                    if (box && box.classList.contains("hidden")) {
+                        box.classList.remove("hidden");
+                        const overlay = box.querySelector(".overlayContent");
+                        if (overlay) {
+                            gsap.fromTo(overlay,
+                                { autoAlpha: 0, scale: 0.6, y: 100 },
+                                { 
+                                    autoAlpha: 1, 
+                                    scale: 1, 
+                                    y: 0, 
+                                    duration: 0.6, 
+                                    ease: "bounce.out" 
+                                }
+                            );
+                        }
                     }
                 }
 
