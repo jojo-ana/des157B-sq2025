@@ -322,7 +322,6 @@
                     const totalSlots = sceneElement.querySelectorAll(".droppableSpace").length;
                     const isCorrect = correctCount === totalSlots;
 
-
                     if (isCorrect) {
                         const audioVic = new Audio('sounds/capstoneVic.wav');
                         audioVic.play();
@@ -347,6 +346,17 @@
                         });
                     } else {
                         alert("Some pieces are missing or incorrectly placed!");
+
+                        sceneElement.querySelectorAll(".droppableSpace").forEach(slot => {
+                            const piece = slot.querySelector(".piece");
+                            if (!piece || piece.dataset.number !== slot.dataset.location) {
+                                slot.style.border = "2px solid red";
+                                slot.style.backgroundColor = "#F09D9D"; 
+                            } else {
+                                slot.style.border = "";
+                                slot.style.backgroundColor = "";
+                            }
+                        });
                     }
                 });
 
@@ -467,6 +477,5 @@
                 });
             }
         });
-
     });
 }());

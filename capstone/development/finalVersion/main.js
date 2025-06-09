@@ -102,7 +102,9 @@ gsap.registerPlugin(SplitText, DrawSVGPlugin);
                         ease: "power1.out"
                     })
                     gsap.to(deskModel.rotation, {
-                        x: new_coordinates.rotation.x
+                        x: new_coordinates.rotation.x, 
+                        duration: 1,
+                        ease: "power1.out"
                     })
 
                 }

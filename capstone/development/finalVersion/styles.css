@@ -679,8 +679,8 @@ h1.title { z-index: 1; margin: .67em 0 0 0; }
 }
 
 #scene3 #prePuzzleFuture p, #scene3 #postPuzzleFuture div p {
-  font-family: "Oxanium", sans-serif;
-  padding: 10%;
+    font-family: "Oxanium", sans-serif;
+    padding: 10%;
 }
 
 .overlayScene3 p {
@@ -777,6 +777,7 @@ h1.title { z-index: 1; margin: .67em 0 0 0; }
     width: 100px;
     height: 100px;
     position: relative;
+    transform-style: preserve-3d;
 }
 
 .flip-container img {
