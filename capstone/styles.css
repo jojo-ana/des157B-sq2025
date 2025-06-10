@@ -39,6 +39,18 @@ body {
     display: block;
 }
 
+footer {
+    text-align: center;
+    padding: 0px 0px 30px;
+}
+
+footer a {
+    z-index: 1000;
+    position: relative;
+    color: rgba(255, 255, 255, 0.842);
+
+}
+
 
 /***** TYPOGRAPHY STYLING *****/
 h1 {
@@ -52,7 +64,7 @@ h1.title2, h1.title3, h1.title4 { font-size: 8em; }
 
 text { font-family: "Roboto", sans-serif; }
 
-p { 
+p, footer { 
     font-family: "Space Mono", monospace;
     color:rgb(255, 255, 255);
     font-size: 21px;
