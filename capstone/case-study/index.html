@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Case Study - The American Dream</title>
+
+    <!-- Normalize CSS for browser compatability -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,100..900&family=Oxanium&family=Roboto:wght@100..900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+	
+	<!--/ /-------- Needed For Mobile Devices --------/ /-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <header id="top">
+        <div class="container">
+            <h1> The American Dream UX/UI Case Study </h1>
+            <p>Joanah Martin</p>
+            <a href="mailto: &#106;&#111;&#097;&#110;&#097;&#104;&#046;&#098;&#046;&#109;&#097;&#114;&#116;&#105;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#106;&#111;&#097;&#110;&#097;&#104;&#046;&#098;&#046;&#109;&#097;&#114;&#116;&#105;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#overview">overview</a></li>
+            <li><a href="#research">research</a></li>
+            <li><a href="#design">design</a></li>
+            <li><a href="#ui">user interface</a></li>
+            <li><a href="#revisions">revisions</a></li>
+            <li><a href="#summary">summary</a></li>
+        </ul>
+    </nav>
+
+    <!--/ /-------- Overview Section --------/ /-->
+    <section id="overview">
+        <div class="container">
+            <h2>Project Overview</h2>
+            <img src="images/gifHero.gif" width="500">
+            <div class="content">
+                <p>"The American Dream" is an interactive narrative project that explores how the pursuit of this ideology that is now rooted in individual success and social mobility has gradually eroded the sense of community and collective wellbeing that originally founded it.</p>
+
+                <p>Targeted to individuals from working-class or modest economic backgrounds, this highlights the expectations of the dream and the reality of it.</p>
+                    
+                <p>Through visual storytelling and mini-interactions via game and animations, this critically examines the historical evolution of the American Dream, ultimately advocating for re-centering community and economic fairness as essential to a sustainable and equitable future</p>
+            </div>
+        </div>
+    </section>
+
+    <!--/ /-------- UX Research Section --------/ /-->
+    <section id="research">
+        <div class="container">
+            <h2>Project Research</h2>
+            <h3>Historical / Contemporary Sources</h3>
+            <div class="content">
+                <p>I drew from sources analyzing the American Dream’s shift from a collective goal of equality to an individualistic pursuit tied to inequality and economic challenges. This research highlights its complexity and how historical, economic, and social factors have shaped its evolving meaning.</p>
+
+                <p><strong>Key themes</strong>: rising inequality, the shift from collective well-being to individual success, and the American Dream’s role as a rhetorical tool that both inspires and masks social challenges, emphasizing the need to address economic and social disparities in the narrative.</p>
+                
+                <p>Informed by these insights, the design aimed to balance critical perspectives with accessibility, using clear storytelling to engage users emotionally and intellectually.</p>
+            </div>
+
+            <h3>Comparative Analysis</h3>
+            <div class="content">
+                <img src="images/warOnUkraine.png">
+                <p>
+                    The intent for both <a href="https://war.artmilitonian.com/">Art Militonian's website on the War on Ukraine</a> and <a href="https://pudding.cool/2023/05/kimchi/">The Search for my kimchi by Alvin Chang</a> is to highlight two different design approaches to storytelling. One informs and inspires through data-driven storytelling with dynamic visuals/interactions. The other focuses on creating an accessible, game-like experience that encourages exploration and learning at the user’s own pace.
+                </p>
+                <img src="images/theSearchForMyKimchi.png">
+            </div>
+            <h3>Usability Testing</h3>
+            <div class="content">
+                <p>Additionally, I conducted periodic usability studies throughout the process to ensure user flow made sense</p>
+
+                <img src="images/usabilityIMg.png">
+                <ul>
+                    <li><strong>Information Timing:</strong> Participants prefer showing information during the puzzle to naturally break up content and boost engagement and retention.</li>
+                    <li><strong>Visual Effects:</strong> Visuals improve the experience; increase interactive elements like subtle sounds and completion feedback.</li>
+                    <li><strong>Future Section Aesthetic:</strong> Design the future section with a tech-focused, futuristic style featuring robotics, transparency, and space-age themes inspired by late-stage capitalism or “Jetsons.”</li>
+                    <li><strong>Page Structure:</strong> The structure effectively balances content and gameplay. Add clearer interaction cues and shorten pop-up text for easier reading.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!--/ /-------- Design Section --------/ /-->
+    <section id="design">
+        <div class="container">
+            <h2>Visual Design</h2>
+            <h3>Page Structure</h3>
+            <div class="content">
+                <p>The page structure is consistent across all three scenes, providing a unified framework for content and interaction. </p>
+
+                <p>To enhance the visual experience, I integrated animation and interaction libraries such as <strong>GSAP, Animate on Scroll, jQuery UI, Particles.js, and Three.js</strong>, which added dynamic and engaging effects throughout the site.</p>
+
+                <p>At the same time, I made each section visually distinct to evoke a sense of traveling through different time periods.</p>
+                
+            </div>
+
+            <h3>Scene 1</h3>
+            <div class="content">
+
+                <div class="column">
+                    <img src="images/s1Title.png" alt="great depression title">
+                    <img src="images/s1Puzzle.png" alt = "2x2 grid asking user to put together the puzzle">
+                </div>
+
+                <div class="column">
+                    <p>For Scene 1, I focused on creating a sense of the past while setting clear expectations for the puzzle interactions through a simple and intuitive design.</p>
+                </div>
+
+                <div>
+                    <img src="images/gifS1Popup.gif" alt="gif scrolling to the puzzle and completing the first step">
+                    <img src="images/s1Popup.png" alt="information about the american dream and great depression">
+                </div>
+
+                <div>
+                    <p>The puzzle in Scene 1 takes the form of a ripped newspaper to reflect how the past is often reconstructed from fragmented accounts and historical records. Newspapers symbolize archived truth, and the torn pieces represent how history is incomplete, subjective, and pieced together over time. This visual metaphor sets the tone for the user to engage in reconstructing the past</p>
+                </div>
+
+                <div>
+                    <img src="images/s1CompletePuzzle.png" alt="complete imagery of an old time newspaper">
+                </div>
+            </div>
+
+            <h3>Scene 2</h3>
+            <div class="content">
+                <div class="column">
+                    <img src="images/gifS2Title.gif" alt="this is america title">
+                    <img src="images/s2Puzzle.png" alt = "3x3 grid asking user to put together the puzzle">
+                </div>
+
+                <div class="column">
+                    <p>For Scene 2, I leaned into a modern aesthetic by using Corporate Memphis-style visuals. This modern, corporate-friendly visual language mirrors how success is now marketed—through tech companies, social media platforms, and productivity tools that emphasize individual achievement, brand identity, and economic performance.</p>
+                </div>
+
+                <div>
+                    <img src="images/gifS2Puzzle.gif" alt="gif scrolling to the puzzle and completing it">
+                    <img src="images/s2CompletePuzzle.png" alt="complete puzzle image">
+                </div>
+
+                <div>
+                    <h4> Version 1</h4>
+                    <p>Initially, I had drawn out the puzzle pieces, but it had not visually represented the time line, so I took it and modernized it</p>
+                    <img src="images/s2PuzzleVer1.png" alt="complete imagery of modern time">
+                </div>
+
+                <div>
+                    <h4> Version 2 </h4>
+                    <p>It then looked like puzzle pieces on a phone, but it was not modern enough</p>
+                    <img src="images/s2PuzzleVer2.png" alt="complete imagery of modern time 2">
+                </div>
+
+                <div>
+                    <h4> Version 3 </h4>
+                    <p>To make the order easier to notice but harder to solve, I hid the clues inside the images themselves. This makes players look more carefully and think a bit harder to figure out the right sequence, encouraging active engagement.</p>
+                    <img src="images/s2PuzzleVer3.png" alt="complete imagery of modern time 3">
+                </div>
+            </div>
+
+            <h3>Scene 3</h3>
+            <div class="content">
+                <div class="column">
+                    <img src="images/gifS3Scroll.gif" alt="Scrolling through scene 3, the future">
+                    <img src="images/s3Popup.png" alt = "encouraging message">
+                </div>
+
+                <div class="column">
+                    <p>For Scene 3, I explored what a “future” aesthetic might look like by leaning into 3D visuals. 3D is often used in futuristic design trends, so incorporating it helped reinforce the idea of moving forward in time while also making the experience feel more immersive and tech-driven.</p>
+                </div>
+
+                <div>
+                    <img src="images/gifS3Scroll2.gif" alt="gif scrolling in the post content">
+                    <img src="images/s3BlenderBuild.jpg" alt="build of the three object">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--/ /-------- UI Section --------/ /-->
+    <section id="ui">
+        <div class="container">
+            <h2>User Interface</h2>
+            
+            <div class="content">
+                <div>
+                    <h3>Puzzle</h3>
+                    <p>Each scene features a drag-and-drop puzzle that reinforces the theme visually and interactively. Pieces are placed on the sides and must be arranged into a central grid, encouraging exploration and engagement. Using jQuery UI kept interactions smooth while allowing for a consistent yet flexible structure across all three time periods. </p>
+                </div>
+                <img src="images/puzzleFlow.png" alt="wireframe version of the game">
+
+                <div>
+                    <h3>Hover</h3>
+                    <p>Hover gave more insight, whether it be informationally or just in hints for the puzzles. </p>
+                    <img src="images/s2Hint.png" alt="hint for puzzle 2">
+                    <img src="images/s2Hover.png" alt="hover event in section 2">
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+    <!--/ /-------- Revisions Section --------/ /-->
+    <section id="revisions">
+        <div class="container">
+            <h2>Revisions</h2>
+            <div class="content">
+                <div>
+                    <h3>Visual Iteration</h3>
+                    <p>With each iteration of the website, I leaned heavier into the visual design of the website.</p>
+                </div>
+                <img src="images/v1s2.png" alt="early version of the website">
+                <img src="images/v2s2.png" alt="early version of the website">
+                <div></div>
+                <img src="images/s2Puzzle.png" alt="early version of the website">
+                
+            </div>
+            <div class="content">
+                <div>
+                    <h3>Hover and Chunking</h3>
+                    <p>By breaking content into manageable, interactive pieces, it keeps users engaged and encourages deeper understanding without cognitive overload.</p>
+                </div>
+                <img src="images/s2Hint.png" alt="hint for puzzle 2">
+                <img src="images/s2Hover.png" alt="hover event in section 2">
+            </div>
+
+            <div class="content">
+                <div>
+                    <h3>Error Checker</h3> 
+                    <p>Implemented a clear visual indicator to highlight incorrect puzzle pieces, providing immediate feedback and helping users correct mistakes efficiently.</p>
+                </div>
+                <img src="images/gifS2Error.gif" alt="error checker, using puzzle 2 for example">
+
+            </div>
+        </div>
+    </section>
+
+    <!--/ /-------- Summary Section --------/ /-->
+    <section id="summary">
+        <div class="container">
+            <h2>Summary</h2>
+            <div class="content">
+                <p><strong>"The American Dream"</strong> is an interactive web experience that examines how the dream has shifted from collective wellbeing to individual success. Targeted at working-class users, the site uses storytelling, drag-and-drop puzzles, and time-based visuals to explore past, present, and future ideologies.</p>
+
+                <p>Each scene incorporates distinct visual themes—from a torn newspaper reflecting historical fragmentation, to Corporate Memphis critiques of modern ambition, to 3D environments imagining future possibilities. Built with <strong>GSAP, jQuery UI, Three.js</strong> and others, the project prioritizes having a strong visual identity and interactive storytelling.</p>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>The American Dream UX/UI Case Study</p>
+            <p>Joanah Martin</p>
+            <a href="mailto: &#106;&#111;&#097;&#110;&#097;&#104;&#046;&#098;&#046;&#109;&#097;&#114;&#116;&#105;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">&#106;&#111;&#097;&#110;&#097;&#104;&#046;&#098;&#046;&#109;&#097;&#114;&#116;&#105;&#110;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;</a>
+            <p><a href="#top">top</a></p>
+        </div>
+    </footer>
+    
+</body>
+</html>
